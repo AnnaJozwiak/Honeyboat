@@ -12,19 +12,6 @@ import theme from "../theme";
 
 const pages = ['O pasiece', 'Nasze przygody', 'Sklep', 'Kontakt'];
 
-// const useStyles = makeStyles((theme)=> ({
-//     button: {
-//         fontSize:13,
-//         textDecoration: 'none',
-//         textTransform:'none'
-//
-//     },
-//     typography: {
-//         display:'flex',
-//         flexDirection: 'column',
-//         alignItems: 'flex-start',
-//     }
-// }))
 
 const Footer =()=> {
     // const classes = useStyles();
@@ -101,14 +88,28 @@ const Footer =()=> {
                         {/*    <a href ='#>'><li>Nasze przygody</li></a>*/}
                         {/*    <a href ='#>'><li>Sklep</li></a>*/}
                         {/*</ul>*/}
-                        <Box >
+                        <Box style={{
+                            display:'flex',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            fontSize:13,
+                            textDecoration: 'none',
+                            textTransform:'none'
+                        }}>
                             <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#' >O pasiece</Button>
                             <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#'>Nasze przygody</Button>
                             <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Sklep</Button>
                             <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Kontakt</Button>
                         </Box>
 
-                        <Box >
+                        <Box style={{
+                            display:'flex',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                             fontSize:13,
+                             textDecoration: 'none',
+                             textTransform:'none'
+                        }}>
                             <Button sx={{textTransform:'none'}} >Regulamin</Button>
                             <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Dostawa i płatności</Button>
                             <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#'>Polityka prywatności</Button>
@@ -119,7 +120,14 @@ const Footer =()=> {
                         {/*      <a href ='#>'><li>Dostawa i płatności</li></a>*/}
                         {/*      <a href ='#>'><li>Polityka prywatności</li></a>*/}
                         {/*</ul>*/}
-                        <Typography >
+                        <Typography style={{
+                            display:'flex',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            fontSize:13,
+                            textDecoration: 'none',
+                            textTransform:'none'
+                        }} >
                             <Link  underline="none">Skontaktuj się z nami:</Link>
                             <Button sx={{textTransform:'none'}} href ='#' target="_blank" underline="none"><AlternateEmailIcon /> honeyboat.pl@gmail.pl</Button>
                             <Button sx={{textTransform:'none'}} href ='#' target="_blank"><PhoneIcon /> 663 150 394</Button>

@@ -14,6 +14,7 @@ const AdminPanel = ({onAdd}) => {
         setIsDisplayAdd(true);
     }
 
+
     return (
         <div style={{
             backgroundImage: `url(${imageBack})`,

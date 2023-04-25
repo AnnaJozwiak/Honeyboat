@@ -1,8 +1,11 @@
 import {useState, useEffect} from 'react';
-import {ThemeProvider,  Container, Box, Typography, Button, Link, CardContent, Card, Grid, TextField} from '@mui/material';
+import {ThemeProvider, IconButton, Container, Box, Typography, Button, Link, CardContent, Card, Grid, TextField} from '@mui/material';
 import theme from "../theme";
 
 import supabase from "./SupabaseClient";
+
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 const ProductsTable = ({onAdd}) => {
     const [products, setProducts] = useState([]);
@@ -12,9 +15,12 @@ const ProductsTable = ({onAdd}) => {
     }, []);
 
     const getProducts = async () =>{
-        const { data } = await supabase.from("products").select();
+        const { data } = await supabase
+            .from("products")
+            .select();
         setProducts(data);
     }
+
 
     return (
         <div >
@@ -80,11 +86,26 @@ const ProductsTable = ({onAdd}) => {
 
                             <Grid xs={12} sm={1} item>
                                 <Typography>Edytuj</Typography>
+                                {products.map((product) => (
+                                    <Typography> <IconButton>
+                                        <EditIcon size='large'/></IconButton></Typography>
+                                ))}
 
                             </Grid>
 
                             <Grid xs={12} sm={1} item>
                                 <Typography>Usuń</Typography>
+                                {products.map((product) => (
+                                    <Typography> <IconButton  ><DeleteIcon size='large'
+                                                                           onClick={async () => {
+                                        const { data} = await supabase
+                                            .from('products')
+                                            .delete()
+                                            .eq('id', product.id)
+                                    }}/>
+                                    </IconButton>
+                                    </Typography>
+                                ))}
                             </Grid>
 
                         </Grid>

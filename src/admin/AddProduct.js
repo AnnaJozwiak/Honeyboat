@@ -20,7 +20,9 @@ const AddProduct = ({onSaveProduct}) => {
             return
         }
 
-        const { data } = await supabase.from("products").insert([{name,description,count, price, img}])
+        const { data } = await supabase
+            .from("products")
+            .insert([{name,description,count, price, img}])
 
         if(data) {
             setFormError(null)
@@ -108,6 +110,12 @@ const AddProduct = ({onSaveProduct}) => {
                                     color='secondary'
                                     type='submit'
                             >Zapisz</Button>
+                            <Button variant='contained'
+                                    color='secondary'
+                                    style={{
+                                        marginLeft:'10px'
+                                    }}
+                            >Cofnij</Button>
 
 
                             {formError && <Typography>{formError}</Typography>}
