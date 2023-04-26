@@ -10,6 +10,12 @@ import EditIcon from '@mui/icons-material/Edit';
 const ProductsTable = ({onAdd}) => {
     const [products, setProducts] = useState([]);
 
+    const onDelete = (id) => {
+        setProducts(prevProduct => {
+            return  prevProduct.filter(product => product.id !==id)
+        } )
+    }
+
     useEffect(() => {
         getProducts();
     }, []);
@@ -20,6 +26,7 @@ const ProductsTable = ({onAdd}) => {
             .select();
         setProducts(data);
     }
+
 
 
     return (
@@ -98,11 +105,15 @@ const ProductsTable = ({onAdd}) => {
                                 {products.map((product) => (
                                     <Typography> <IconButton  ><DeleteIcon size='large'
                                                                            onClick={async () => {
-                                        const { data} = await supabase
-                                            .from('products')
-                                            .delete()
-                                            .eq('id', product.id)
-                                    }}/>
+                                                                          const { data} = await supabase
+                                                                              .from('products')
+                                                                              .delete()
+                                                                              .eq('id', product.id)
+                                                                               if(data) {
+                                                                                    onDelete(product.id)
+                                                                               }
+                                    }}
+                                    />
                                     </IconButton>
                                     </Typography>
                                 ))}

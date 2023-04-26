@@ -4,7 +4,7 @@ import theme from "../theme";
 
 import supabase from "./SupabaseClient";
 
-const AddProduct = ({onSaveProduct}) => {
+const AddProduct = ({onCancel}) => {
     const [name,setName] = useState('');
     const [description,setDescription] = useState('');
     const [count,setCount] = useState('');
@@ -12,6 +12,8 @@ const AddProduct = ({onSaveProduct}) => {
     const [img,setImgUrl] = useState('');
     const [formError, setFormError] =useState(null);
 
+
+    //dodanie do bazy
     const handleSubmit = async () => {
         // e.preventDefault();
 
@@ -34,10 +36,10 @@ const AddProduct = ({onSaveProduct}) => {
     return (
         <div >
             <ThemeProvider theme={theme}>
-                <Card maxWidth="md"
+                <Card
                       style={{
-                          margin: '70px 50px',
-                          padding:'20px 30px'
+                          margin: '100px auto',
+                          maxWidth: '1500px'
                       }}>
                     <CardContent>
 
@@ -115,6 +117,7 @@ const AddProduct = ({onSaveProduct}) => {
                                     style={{
                                         marginLeft:'10px'
                                     }}
+                                    onClick={onCancel}
                             >Cofnij</Button>
 
 

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Route, Routes, Link, BrowserRouter} from 'react-router-dom';
+import { Route, Routes, Link, BrowserRouter, useParams} from 'react-router-dom';
 import Main from "./components/Main";
-import AdminPanel from "./admin/AdminPanel";
+import AdminPulpit from "./admin/AdminPulpit";
+import AppPanel from "./admin/AppPanel";
+import Update from "./admin/Update";
 
 
 function App() {
@@ -9,7 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Main />}/>
-          <Route path='/admin' element={<AdminPanel />} />
+          <Route path='/admin' element={<AdminPulpit/>}/>
+          <Route path='/admin/:id' element={<Update/>} />
         </Routes>
       </BrowserRouter>
   )

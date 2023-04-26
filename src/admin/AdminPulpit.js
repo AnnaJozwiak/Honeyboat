@@ -2,16 +2,22 @@ import React, {useState} from 'react';
 import imageBack from "../assets/tlo4.png";
 import {CssBaseline} from "@mui/material";
 import imageTop from "../assets/wave4.svg";
+import { Route, Routes, Link, BrowserRouter} from 'react-router-dom';
 
 import AdminHeader from "./AdminHeader";
-import ProductsTable from "./ProductsTable";
 import AddProduct from "./AddProduct";
+import BasicTable from "./Table";
 
-const AdminPanel = ({onAdd}) => {
-    const [isDisplayAdd, setIsDisplayAdd] = useState(false)
+
+const AdminPulpit = ({onAdd, onCancel, onUpdate}) => {
+    const [isDisplayAdd, setIsDisplayAdd] = useState(false);
 
     const handleAdd = () => {
         setIsDisplayAdd(true);
+    }
+
+    const handleCancel = () => {
+        setIsDisplayAdd(false)
     }
 
 
@@ -31,13 +37,12 @@ const AdminPanel = ({onAdd}) => {
                 backgroundPositionY:'-20px'
             }}>
                 <AdminHeader/>
-                {!isDisplayAdd && <ProductsTable onAdd={handleAdd}/>}
-                {isDisplayAdd && <AddProduct/>}
-
+                {!isDisplayAdd && <BasicTable onAdd={handleAdd}/>}
+                {isDisplayAdd && <AddProduct onCancel = {handleCancel}/>}
             </div>
 
         </div>
     )
 }
 
-export default AdminPanel;
+export default AdminPulpit;
