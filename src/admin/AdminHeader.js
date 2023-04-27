@@ -1,4 +1,4 @@
-import {AppBar,Box,Toolbar, Typography , Container,ThemeProvider} from '@mui/material';
+import {Avatar,AppBar,Box,Toolbar, Typography , Container,ThemeProvider} from '@mui/material';
 
 import theme from "../theme";
 
@@ -33,16 +33,26 @@ const AdminHeader =() => {
                         <Box
                             sx={{
                                 flexGrow: 1,
-                                display: { xs: 'none', md: 'flex' },
+                                display: 'flex',
                                 justifyContent:'flex-end' }}>
                             <Typography  sx ={{color: 'black',
                                 display: 'block' ,
                                 fontWeight: 700,
                                 fontSize: '20px',
-                                mb:{  lg:8 },}}>
-                                PANEL ADMINISTRATORA /IKONA Z IMIENIEM USERA
+                                mb:{  xs:13,lg:8 },}}>
+                                PANEL ADMINISTRATORA
                             </Typography>
+                            <Avatar sx={{ bgcolor: 'black',
+                                marginLeft:'20px',
+                                width:'50px',
+                                height:'50px',
+                                fontFamily:'Montserrat',
+                                fontWeight: 700,
+                                fontSize: 20,
+                                bottom:"10px",
+                                color: '#F3D188'
 
+                                 }}>AJ</Avatar>
                         </Box>
                     </Toolbar>
                 </Container>

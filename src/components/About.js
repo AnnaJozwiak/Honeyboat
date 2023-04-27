@@ -14,7 +14,6 @@ const About = () => {
                        sx={{
                            backgroundColor:'transparent',
                            mt:{ xs: 1, md: 10, lg: '120px' },
-                           maxHeight:'300px',
                            // display: 'flex',
                            // justifyContent: 'space-between',
                            // flexWrap: 'wrap'
@@ -30,10 +29,10 @@ const About = () => {
                 </Box>
                 <Box>
                     <CardContent>
-                        {/*<img src={imageFront} alt='pasieka' style={{*/}
-                        {/*    width: '100%',*/}
-                        {/*    margin: '0 auto'*/}
-                        {/*}}/>*/}
+                        <img src={imageFront} alt='pasieka' style={{
+                            width: '100%',
+                            margin: '0 auto'
+                        }}/>
                         <Typography variant="body2"
                                     sx={{
                                         mr: 3,

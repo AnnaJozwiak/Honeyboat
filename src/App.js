@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, Link, BrowserRouter, useParams} from 'react-router-dom';
+import { Route, Routes, Link, BrowserRouter} from 'react-router-dom';
 import Main from "./components/Main";
 import AdminPulpit from "./admin/AdminPulpit";
 import AppPanel from "./admin/AppPanel";

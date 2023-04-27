@@ -15,7 +15,10 @@ const Contact = () => {
                     padding:'20px 5px'
                 }}>
                     <CardContent>
-                        <Typography variant='h3'>
+                        <Typography variant='h3'
+                                    style={{
+                                        marginBottom: '10px',
+                                    }}>
                             Skontaktuj się z nami!
                         </Typography>
                         <form>

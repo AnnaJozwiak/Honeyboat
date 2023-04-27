@@ -9,7 +9,7 @@ import AddProduct from "./AddProduct";
 import BasicTable from "./Table";
 
 
-const AdminPulpit = ({onAdd, onCancel, onUpdate}) => {
+const AdminPulpit = ({onAdd, onCancel}) => {
     const [isDisplayAdd, setIsDisplayAdd] = useState(false);
 
     const handleAdd = () => {

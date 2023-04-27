@@ -2,10 +2,10 @@ import {IconButton, TableCell, TableRow} from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import {Link} from 'react-router-dom';
+
 import supabase from "./SupabaseClient";
 
 const ItemRow = ({product, index, onDelete}) => {
-
 
     //usuniecie z bazy
     const handleDelete = async () => {
@@ -14,9 +14,7 @@ const ItemRow = ({product, index, onDelete}) => {
             .delete()
             .eq('id', product.id)
 
-        if(data) {
-            onDelete(product.id)
-        }
+        onDelete(product.id)
     }
 
     return (

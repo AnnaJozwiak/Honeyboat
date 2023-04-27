@@ -1,7 +1,7 @@
 import {useParams, useNavigate, Link} from "react-router-dom";
-import {useEffect,useState} from'react';
+import React, {useEffect,useState} from'react';
 
-import {Button, Card, CardContent, Grid, TextField, ThemeProvider, Typography} from '@mui/material';
+import {Button, Card, CardContent, CssBaseline, Grid, TextField, ThemeProvider, Typography} from '@mui/material';
 
 import supabase from "./SupabaseClient";
 import theme from "../theme";
@@ -65,8 +65,8 @@ const Update =() => {
         }
         if(data) {
             setFormError(null);
-            navigate('/admin');
         }
+        navigate('/admin');
     }
 
     return (
@@ -74,13 +74,18 @@ const Update =() => {
             backgroundImage: `url(${imageBack})`,
             backgroundRepeat: 'repeat',
             backgroundSize: 'contain',
-            height:'100vh'
+            height:'100vh',
+            padding:'100px'
         }}>
+            <CssBaseline/>
+             <ThemeProvider theme={theme} style={{margin:0}}>
 
-        <ThemeProvider theme={theme}>
+            <Card  style={{
+                margin: '100px auto',
+                maxWidth: '1500px',
 
-            <Card maxWidth="xl" sx={{margin: '0 auto'}}>
-                <Typography>Zaktualizuj produkt id: {id}</Typography>
+            }}>
+                <Typography fontWeight={700} style={{padding:'20px'}}>Zaktualizuj produkt id: {id}</Typography>
                 <CardContent>
                     <form onSubmit={handleSubmit}>
                         <Grid container spacing={1}>
@@ -149,15 +154,16 @@ const Update =() => {
                         <Button variant='contained'
                                 color='secondary'
                                 type='submit'
+
                         >Zaktualizuj</Button>
-                        <Link to={'/admin'}>
                             <Button variant='contained'
                                 color='secondary'
                                 style={{
                                     marginLeft:'10px'
                                 }}
+                                component={Link}
+                                to={`/admin`}
                         >Cofnij</Button>
-                    </Link>
                         {formError && <Typography>{formError}</Typography>}
                     </form>
                 </CardContent>

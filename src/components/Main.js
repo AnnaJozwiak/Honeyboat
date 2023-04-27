@@ -8,6 +8,7 @@ import Contact from "./Contact";
 
 import imageBack from '../assets/tlo4.png';
 import imageTop from '../assets/wave4.svg';
+import Banner from "./Banner";
 
 const Main = () => {
 
@@ -27,10 +28,11 @@ const Main = () => {
                 height:'50hv',
             }}>
                 <Header/>
-                <About/>
-                <Contact/>
-            </div>
+                <Banner/>
 
+            </div>
+            <About/>
+            <Contact/>
 
             <div style={{
                 // backgroundImage: `url(${image3})`,

@@ -31,7 +31,9 @@ const BasicTable =({onAdd}) => {
 
     return (
         <ThemeProvider theme={theme}>
-        <TableContainer component={Paper} maxWidth="md" style ={{maxWidth: '1500px', margin: '100px auto' }}>
+        <TableContainer component={Paper}
+                        maxWidth="md"
+                        style ={{maxWidth: '1500px', margin: '100px auto' }}>
             <Button variant='contained'
                     color='secondary'
                     sx={{

@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import {useNavigate} from "react-router-dom";
 import theme from "../theme";
 
 const pages = ['O pasiece', 'Nasze przygody', 'Sklep', 'Kontakt'];
 
 const Header =() => {
     const [anchorElNav, setAnchorElNav] = useState(null);
+
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -32,18 +33,34 @@ const Header =() => {
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
 
+                        <Typography
+                            sx={{
+                                mr: 3,
+                                display: 'flex',
+                                // display: { xs: 'none', md: 'flex' },
+                                height: { xs: '120px', md: '100px',lg: '150px', xl: '170px'},
+                                ml:{ xs: 5, md: 12, lg: 17,xl:15 },
+                                mt:{ xs: 2, xl:3 },
+                            }}
+                        >
+                            <img src={require('../assets/logo bez tla.png')} alt='logo' />
+
+                        </Typography>
+
                         <Box sx={{
                             flexGrow: 1,
-                            display: { xs: 'flex', md: 'none' }}}>
+                            display: { xs: 'flex', md: 'none' },
+                             justifyContent:'flex-end'}}>
                             <IconButton
-                                size="large"
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"
                                 onClick={handleOpenNavMenu}
                                 color="black"
                                 sx={{
-                                    mb:3,
+                                    mb:6,
+                                    mr: 3,
+                                    fontSize: '30px'
                                 }}
                             >
                                 <MenuIcon size="large"/>
@@ -77,19 +94,7 @@ const Header =() => {
                             </Menu>
                         </Box>
 
-                        <Typography
-                            sx={{
-                                mr: 3,
-                                display: 'flex',
-                                // display: { xs: 'none', md: 'flex' },
-                                height: { xs: '120px', md: '150px', xl: '170px'},
-                                ml:{ xs: 5, md: 17, xl:15 },
-                                mt:{ xs: 2, xl:3 },
-                            }}
-                        >
-                            <img src={require('../assets/logo bez tla.png')} alt='logo' />
 
-                        </Typography>
 
                         <Box
                             sx={{
@@ -100,7 +105,7 @@ const Header =() => {
                                 <Button
                                     component = 'a'
                                     // href="/"
-                                    // href= #{page}
+                                    // href= `#${page}`
                                     key={page}
                                     onClick={handleCloseNavMenu}
                                     // onclick="location.href='https://google.com'
