@@ -50,8 +50,8 @@ const BasicTable =({onAdd}) => {
                         <TableCell>Ilość</TableCell>
                         <TableCell >Cena</TableCell>
                         <TableCell >Grafika</TableCell>
-                        <TableCell >Edytuj</TableCell>
-                        <TableCell >Usuń</TableCell>
+                        <TableCell > </TableCell>
+                        <TableCell > </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

@@ -31,16 +31,16 @@ const ItemRow = ({product, index, onDelete}) => {
             <TableCell >{product.count}</TableCell>
             <TableCell >{product.price}</TableCell>
             <TableCell >{product.img}</TableCell>
-            <TableCell >
+            <TableCell align="right">
                 <Link to={'/admin/'+product.id}>
                     <IconButton>
-                        <EditIcon size='large'/>
+                        <EditIcon sx={{fontSize:'22px'}}/>
                     </IconButton>
                 </Link>
             </TableCell>
             <TableCell >
                 <IconButton  >
-                    <DeleteIcon size='large'
+                    <DeleteIcon sx={{fontSize:'22px'}}
                                 onClick={handleDelete}
                     />
                 </IconButton>

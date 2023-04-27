@@ -145,7 +145,7 @@ const Footer =()=> {
                     justifyContent:'center'
                 }}>
                     <Typography >
-                        Copyright © 2021 honeyboat.pl. All rights reserved.
+                        Copyright © 2023 honeyboat.pl. All rights reserved.
                     </Typography>
                 </Box>
 

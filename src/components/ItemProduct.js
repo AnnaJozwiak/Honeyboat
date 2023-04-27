@@ -5,7 +5,7 @@ import theme from "../theme";
 
 const imageFront= require('../images/foto6.jpg');
 
-const About = () => {
+const ItemProduct = ({product}) => {
 
     return(
 
@@ -24,18 +24,13 @@ const About = () => {
                            // flexDirection: 'column'
 
                        }}>
-                <Box maxWidth="md"
-                >
-
-
-                </Box>
                 <Box>
                     <CardContent>
-                        <img src={imageFront} alt='pasieka' style={{
-                            width: '100%',
-                            margin: '0 auto',
-                            borderRadius:'4px'
-                        }}/>
+                        {/*<img src={imageFront} alt='pasieka' style={{*/}
+                        {/*    width: '100%',*/}
+                        {/*    margin: '0 auto',*/}
+                        {/*    borderRadius:'4px'*/}
+                        {/*}}/>*/}
                         <Typography variant="body2"
                                     sx={{
                                         mr: 3,
@@ -48,8 +43,21 @@ const About = () => {
                                         textAlign:'center'
                                     }}
                         >
-                            Jesteśmy rodziną, która stawia pierwsze kroki w pszczelarstwie. Nasza pasieka znajduje się w malowniczej okolicy Łodzi.
-                            W naszej ofercie znajdziesz różne rodzaje miodów, w tym m.in. miód lipowy, gryczany, rzepakowy oraz wielokwiatowy.
+                            {product.name}
+
+                        </Typography>
+                        <Typography variant="body2"
+                                    sx={{
+                                        mr: 3,
+                                        display: 'flex',
+                                        flexWrap:'wrap',
+                                        // ml:{ xs: 5, md: 17, xl:15 },
+                                        mt:{ xs: 2, xl:3 },
+                                        fontSize: 14,
+                                        fontWeight: 600,
+                                        textAlign:'center'
+                                    }}
+                        >Cena: {product.price} zł
 
                         </Typography>
                     </CardContent>
@@ -63,4 +71,4 @@ const About = () => {
     )
 }
 
-export default About;
+export default ItemProduct;

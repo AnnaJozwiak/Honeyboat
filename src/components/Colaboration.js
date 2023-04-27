@@ -3,7 +3,7 @@ import {ThemeProvider, Container, Box, Typography, Button, IconButton, Link, Car
 
 import theme from "../theme";
 
-const Banner = () => {
+const Colaboration = () => {
 
     return(
 
@@ -30,24 +30,16 @@ const Banner = () => {
                         <Typography variant="body2"
                                     sx={{
                                         marginTop: { xs: '20px', md: '10px',lg:'10px', xl:'1px' },
-                                        fontSize: { xs: 25,sm:30, md: 40, xl:50 },
+                                        fontSize: { xs: 15,sm:20, md: 30, xl:30 },
                                         fontWeight: 700,
-                                        fontFamily: 'Caveat'
+                                        fontFamily: 'Caveat',
+                                        textAlign:'center'
                                     }}
                         >
-                            Miody pszczele prosto z pasieki!
+                           Jesteś sadownikiem lub rolnikiem z uprawami kwitnącymi? <br/>
+                            Chcesz mieć większe plonu?<br/>
+                            Skontaktuj się z naszą pasieką wędrowną. Wypełnij formularz kontaktowy lub zadzowń!
                         </Typography>
-                        <Typography sx={{
-                            fontSize: { xs: 20, md: 35, xl:45 },
-                            fontWeight: 600,
-                            fontFamily: 'Caveat'
-                        }}>Poszukujesz prawidziwego miodu?
-                        </Typography>
-                        <Typography sx={{
-                            fontSize: { xs: 20,sm:25, md: 35, xl:45 },
-                            fontWeight: 600,
-                            fontFamily: 'Caveat'
-                        }}>Skontaktuj się z nami!</Typography>
                     </CardContent>
 
                 </Box>
@@ -59,4 +51,4 @@ const Banner = () => {
     )
 }
 
-export default Banner;
+export default Colaboration;

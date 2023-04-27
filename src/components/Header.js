@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {useNavigate} from "react-router-dom";
 import theme from "../theme";
 
-const pages = ['O pasiece', 'Nasze przygody', 'Sklep', 'Kontakt'];
+const pages = ['O pasiece', 'Nasze przygody', 'Sklep','Współpraca', 'Kontakt'];
 
 const Header =() => {
     const [anchorElNav, setAnchorElNav] = useState(null);
