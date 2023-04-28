@@ -29,6 +29,7 @@ const ItemRow = ({product, index, onDelete}) => {
             <TableCell >{product.name}</TableCell>
             <TableCell >{product.description}</TableCell>
             <TableCell >{product.count}</TableCell>
+            <TableCell >{product.weight}</TableCell>
             <TableCell >{product.price}</TableCell>
             <TableCell >{product.img}</TableCell>
             <TableCell align="right">

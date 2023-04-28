@@ -44,17 +44,23 @@ const AllProducts = () => {
                        }}>
                 <Box maxWidth="md"
                 >
-
+                    <Typography>Nasze miody</Typography>
 
                 </Box>
                 <Box>
-                    <CardContent>
+                    <CardContent sx={{
+                        display:'flex',
+                        flexDirection:'row',
+                        flexWrap: 'wrap',
+                        gap: '30px'
+                    }}>
                         {products.map((product, index) => (
                             <ItemProduct
                                 key={product.id}
                                 product={product}
                                 index = {index}
-                                // onDelete = {handleDelete}
+
+
                             />
                         ))}
 

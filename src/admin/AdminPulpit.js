@@ -19,7 +19,9 @@ const AdminPulpit = ({onAdd, onCancel}) => {
     const handleCancel = () => {
         setIsDisplayAdd(false)
     }
-
+    const handleSave = () => {
+        setIsDisplayAdd(false)
+    }
 
     return (
         <div style={{

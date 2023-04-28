@@ -1,35 +1,44 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import {ThemeProvider,  Container, Box, Typography, Button, Link, CardContent, Card, Grid, TextField} from '@mui/material';
 import theme from "../theme";
 
 import supabase from "./SupabaseClient";
+import {useNavigate} from "react-router-dom";
 
 const AddProduct = ({onCancel}) => {
     const [name,setName] = useState('');
     const [description,setDescription] = useState('');
     const [count,setCount] = useState('');
     const [price,setPrice] = useState('');
+    const [weight,setWeight] = useState('');
     const [img,setImgUrl] = useState('');
     const [formError, setFormError] =useState(null);
 
+    const navigate = useNavigate();
 
     //dodanie do bazy
     const handleSubmit = async () => {
         // e.preventDefault();
 
-        if(!name || !description || !count || !price || !img) {
+        if(!name || !description || !count || !weight || !price || !img) {
             setFormError('Proszę uzupełnić wszystkie pola')
             return
         }
 
-        const { data } = await supabase
+        const { data,error } = await supabase
             .from("products")
-            .insert([{name,description,count, price, img}])
+            .insert([{name,description,count, price,weight, img}])
+
+
+        if(error) {
+            setFormError('Proszę uzupełnić wszystkie pola');
+        }
 
         if(data) {
             setFormError(null)
             console.log(data)
         }
+
     }
 
 
@@ -67,6 +76,7 @@ const AddProduct = ({onCancel}) => {
                                         fullWidth
                                         color='secondary'
                                         value={description}
+                                        multiline rows={3}
                                         onChange={(e)=> setDescription(e.target.value)}/>
                                 </Grid>
 
@@ -92,6 +102,17 @@ const AddProduct = ({onCancel}) => {
                                         color='secondary'
                                         value={price}
                                         onChange={(e)=> setPrice(e.target.value)}/>
+                                </Grid>
+                                <Grid xs={12} sm={2} item>
+                                    <Typography>Waga (g)</Typography>
+                                </Grid>
+                                <Grid xs={12} sm={10} item>
+                                    <TextField
+                                        variant='outlined'
+                                        fullWidth
+                                        color='secondary'
+                                        value={weight}
+                                        onChange={(e)=> setWeight(e.target.value)}/>
                                 </Grid>
 
                                 <Grid xs={12} sm={2} item>

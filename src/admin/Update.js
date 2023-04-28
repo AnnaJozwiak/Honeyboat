@@ -15,6 +15,7 @@ const Update =() => {
     const [description,setDescription] = useState('');
     const [count,setCount] = useState('');
     const [price,setPrice] = useState('');
+    const [weight,setWeight] = useState('');
     const [img,setImgUrl] = useState('');
     const [formError, setFormError] =useState(null);
 
@@ -35,6 +36,7 @@ const Update =() => {
             setDescription(data.description)
             setCount(data.count)
             setPrice(data.price)
+            setWeight(data.weight)
             setImgUrl(data.img)
         }
     }
@@ -50,14 +52,14 @@ const Update =() => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if(!name || !description || !count || !price || !img) {
+        if(!name || !description || !count || !weight || !price || !img) {
             setFormError('Proszę uzupełnić wszystkie pola');
             return
         }
 
         const { data,error } = await supabase
             .from("products")
-            .update({name, description,count,price,img})
+            .update({name, description,count,price,weight,img})
             .eq('id', id)
 
         if(error) {
@@ -111,6 +113,7 @@ const Update =() => {
                                     fullWidth
                                     color='secondary'
                                     value={description}
+                                    multiline rows={3}
                                     onChange={(e)=> setDescription(e.target.value)}/>
                             </Grid>
 
@@ -136,6 +139,17 @@ const Update =() => {
                                     color='secondary'
                                     value={price}
                                     onChange={(e)=> setPrice(e.target.value)}/>
+                            </Grid>
+                            <Grid xs={12} sm={2} item>
+                                <Typography>Waga (g)</Typography>
+                            </Grid>
+                            <Grid xs={12} sm={10} item>
+                                <TextField
+                                    variant='outlined'
+                                    fullWidth
+                                    color='secondary'
+                                    value={weight}
+                                    onChange={(e)=> setWeight(e.target.value)}/>
                             </Grid>
 
                             <Grid xs={12} sm={2} item>

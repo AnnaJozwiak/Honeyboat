@@ -48,6 +48,7 @@ const BasicTable =({onAdd}) => {
                         <TableCell >Nazwa</TableCell>
                         <TableCell >Opis</TableCell>
                         <TableCell>Ilość</TableCell>
+                        <TableCell>Waga (g)</TableCell>
                         <TableCell >Cena</TableCell>
                         <TableCell >Grafika</TableCell>
                         <TableCell > </TableCell>

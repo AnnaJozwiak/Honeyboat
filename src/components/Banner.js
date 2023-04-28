@@ -11,7 +11,7 @@ const Banner = () => {
             <Container maxWidth="lg"
                        sx={{
                            backgroundColor:'transparent',
-                           mt:{ xs: 1, md: 10, lg: '20px' },
+                           mt:{ xs: 1, md: 10, lg: '30px' },
                            maxHeight:'300px',
 
                        }}>

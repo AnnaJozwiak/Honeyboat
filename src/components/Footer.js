@@ -68,8 +68,6 @@ const Footer =()=> {
                     </Typography>
 
                     <Typography
-                        variant="h6"
-                        noWrap
                         component="a"
                         href="/"
                         sx={{
