@@ -52,7 +52,7 @@ const Footer =()=> {
                             }}
                         >
                             <InstagramIcon />
-                            {/*<img src="...."/>*/}
+
                         </IconButton>
                         <IconButton
                             size="large"

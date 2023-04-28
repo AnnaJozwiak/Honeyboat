@@ -10,12 +10,19 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div style={{
+            backgroundImage: `url(${imageBack})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: 'contain',
+            height:'100vh',
+            padding:'100px',
+            margin:0
+
+        }}>
             <ThemeProvider theme={theme}>
                 <Card style={{
                     maxWidth: '450px',
-                    margin: '0 auto 30px',
-                    padding:'20px 5px'
+                    margin: '200px auto',
                 }}>
                     <CardContent>
                         <Typography variant='h3'>
@@ -23,7 +30,7 @@ const Login = () => {
                         </Typography>
                         <form>
                             <Grid container spacing={1}>
-                                <Grid xs={12} sm={6} item>
+                                <Grid xs={12}  item>
                                     <TextField
                                         label = "Login"
                                         placeholder='Podaj swój login'
@@ -33,7 +40,7 @@ const Login = () => {
                                         color='secondary'/>
 
                                 </Grid>
-                                <Grid xs={12} sm={6} item>
+                                <Grid xs={12}  item>
                                     <TextField
                                         label = "Hasło"
                                         placeholder='Podaj swoje hasło'

@@ -24,11 +24,7 @@ const About = () => {
                            // flexDirection: 'column'
 
                        }}>
-                <Box maxWidth="md"
-                >
 
-
-                </Box>
                 <Box>
                     <CardContent>
                         <img src={imageFront} alt='pasieka' style={{

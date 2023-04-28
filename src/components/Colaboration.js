@@ -38,7 +38,7 @@ const Colaboration = () => {
                         >
                            Jesteś sadownikiem lub rolnikiem z uprawami kwitnącymi? <br/>
                             Chcesz mieć większe plonu?<br/>
-                            Skontaktuj się z naszą pasieką wędrowną. Wypełnij formularz kontaktowy lub zadzowń!
+                            Skontaktuj się z naszą pasieką wędrowną. Wypełnij formularz kontaktowy lub zadzwoń!
                         </Typography>
                     </CardContent>
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ThemeProvider,Container, Box, Typography, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
+import {ThemeProvider,Container, Box, Typography,Grid, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
 
 import theme from "../theme";
 import supabase from "../admin/SupabaseClient";
@@ -31,42 +31,44 @@ const AllProducts = () => {
                        component={Paper}
                        sx={{
                            marginTop: '100px',
-                           paddingTop:'16px'
-                           // backgroundColor:'transparent',
-                           // mt:{ xs: 1, md: 10, lg: '120px' },
-                           // display: 'flex',
-                           // justifyContent: 'space-between',
-                           // flexWrap: 'wrap'
-                           //    display: 'flex',
-                           // flexWrap:'wrap',
-                           // flexDirection: 'column'
-
+                           padding:'30px 0'
                        }}>
-                <Box maxWidth="md"
+                <Box maxWidth="xl"
                 >
-                    <Typography>Nasze miody</Typography>
+                    <Typography  variant='h3' sx={{
+
+                        fontSize: 30,
+                        fontWeight: 700,
+                        textAlign:'center',
+                        paddingBottom:'50px'
+                    }}>W naszej ofercie posiadamy</Typography>
 
                 </Box>
-                <Box>
-                    <CardContent sx={{
-                        display:'flex',
-                        flexDirection:'row',
-                        flexWrap: 'wrap',
-                        gap: '30px'
-                    }}>
+                <Box sx={{
+                    display:'flex',
+                    flexGrow: 1,
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // margin: '0 auto',
+                }}>
+                    {/*<CardContent*/}
+                    {/*    sx={{*/}
+                    {/*    display:'flex',*/}
+                    {/*   flexGrow: 1,*/}
+                    {/*    flexWrap: 'wrap',*/}
+                    {/*    gap: '30px',*/}
+                    {/*    margin: '0 auto',*/}
+                    {/*}}*/}
+                    {/*>*/}
                         {products.map((product, index) => (
                             <ItemProduct
                                 key={product.id}
                                 product={product}
                                 index = {index}
-
-
                             />
                         ))}
 
-
-
-                    </CardContent>
+                    {/*</CardContent>*/}
 
                 </Box>
 

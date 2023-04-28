@@ -4,7 +4,7 @@ import Main from "./components/Main";
 import AdminPulpit from "./admin/AdminPulpit";
 import AppPanel from "./admin/AppPanel";
 import Update from "./admin/Update";
-
+import Login from "./admin/Login";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <Route path='/' element={<Main />}/>
           <Route path='/admin' element={<AdminPulpit/>}/>
           <Route path='/admin/:id' element={<Update/>} />
+            <Route path='/login' element={<Login/>}/>
         </Routes>
       </BrowserRouter>
   )

@@ -1,14 +1,35 @@
 import React, {useState} from 'react';
-import {ThemeProvider,  Container, Box, Typography, Button, IconButton, Link, CardContent, Card, Grid, TextField} from '@mui/material';
+import {ThemeProvider, Container, Box, Typography, Button, IconButton, Link, CardContent, Card, Grid, TextField, Paper
+} from '@mui/material';
 import theme from "../theme";
+import imageFront from "../images/foto7.jpg";
 
 
 const Contact = () => {
 
 
     return (
-        <div id ='contact'>
             <ThemeProvider theme={theme}>
+
+                <Container id ='contact'
+                     maxWidth='xl' style={{
+                    display:'flex',
+                    justifyContent: 'space-between',
+                    flex:'wrap',
+                    flexGrow: 1,
+                }}>
+                <Box  component={Paper}  style ={{margin: '0 auto 30px',
+                    padding:'20px 5px',}}>
+                    <CardContent>
+                        <img src={imageFront} alt='pasieka' style={{
+                            // width: '100%',
+                            maxHeight:'500px',
+                            borderRadius:'4px'
+                        }}/>
+                    </CardContent>
+
+                </Box>
+
                 <Card style={{
                     maxWidth: '450px',
                     margin: '0 auto 30px',
@@ -96,8 +117,8 @@ const Contact = () => {
                         </form>
                     </CardContent>
                 </Card>
+                </Container>
             </ThemeProvider>
-        </div>
     )
 }
 

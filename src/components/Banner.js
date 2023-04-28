@@ -8,7 +8,7 @@ const Banner = () => {
     return(
 
         <ThemeProvider theme={theme}>
-            <Container maxWidth="lg"
+            <Container maxWidth="xl"
                        sx={{
                            backgroundColor:'transparent',
                            mt:{ xs: 1, md: 10, lg: '30px' },

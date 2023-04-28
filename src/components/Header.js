@@ -27,8 +27,6 @@ const Header =() => {
                     backgroundColor:'transparent',
                     boxShadow:0,
 
-
-
                 }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>

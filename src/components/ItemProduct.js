@@ -3,6 +3,9 @@ import {ThemeProvider,Container, Box, Typography, Button, IconButton, Link, Card
 
 import theme from "../theme";
 
+import blob from '../assets/blob2.svg'
+import imageTop from "../assets/wave4.svg";
+
 const ItemProduct = ({product}) => {
 
     return(
@@ -11,18 +14,18 @@ const ItemProduct = ({product}) => {
             <Container
                        component={Paper}
                        sx={{
-                           paddingTop:'16px',
-                           // backgroundColor:'transparent',
-                           // mt:{ xs: 1, md: 10, lg: '120px' },
-                           // display: 'flex',
-                           // justifyContent: 'space-between',
-                           // flexWrap: 'wrap'
-                           // flexDirection: 'column'
+                           // paddingTop:'16px',
                            border:'1px solid #F3D188',
-
+                            width: '350px'
                        }}>
                 <Box>
-                    <CardContent >
+                    <CardContent sx={{
+                        display:'flex',
+                        flexDirection:'column',
+                        justifyContent:'space-between',
+                        flexGrow: 1,
+                        height:'540px'
+                    }} >
 
                         <Typography variant="body2"
                                     sx={{
@@ -33,23 +36,31 @@ const ItemProduct = ({product}) => {
                                         fontWeight: 600,
                                     }}
                         >
-                            {product.name}  {product.weight} g
+                            {product.name}  {product.weight}g
 
                         </Typography>
 
-                        <Typography variant="body2"
-                                    sx={{
+                        <Typography   sx={{
                                         mr: 3,
                                         // ml:{ xs: 5, md: 17, xl:15 },
                                         mt:{ xs: 2, xl:3 },
-                                        fontSize: 14,
-                                        fontWeight: 400,
+                                        // width: { xs: '30px', sm: '50px', xl: '150px'},
+                                        backgroundImage: `url(${blob})`,
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundSize: 'cover',
+                                        display:'flex',
+                                         justifyContent:'center',
+                                        backgroundPositionY:'-22px'
                                     }}
                         >
-                            <img src={require(`../images/products/${product.img}?w=161&fit=crop&auto=format`)} alt ={product.name}/>
+                            <img src={require(`../images/products/${product.img}`)} alt ={product.name}
+                            style={{
+                               maxHeight:'200px'
+                            }}/>
 
 
                         </Typography>
+
                         <Typography variant="body2"
                                     sx={{
                                         mr: 3,
@@ -62,6 +73,7 @@ const ItemProduct = ({product}) => {
 
                         </Typography>
 
+                        <Box sx ={{justifyItems:'flex-end', alignSelf:'flex-end'}}>
                         <Typography variant="body2"
                                     sx={{
                                         mr: 3,
@@ -69,14 +81,16 @@ const ItemProduct = ({product}) => {
                                         mt:{ xs: 2, xl:3 },
                                         fontSize: 16,
                                         fontWeight: 600,
+                                       textAlign:'right',
+                                        marginRight:0
                                     }}
-                        >Cena: {product.price} zł
-
+                        >Cena: {product.price}zł
                         </Typography>
 
                         <Button variant='contained'
-                            // fullWidth
-                            color='secondary'>Dodaj do koszyka</Button>
+                            color='secondary'
+                        >Dodaj do koszyka</Button>
+                      </Box>
                     </CardContent>
 
                 </Box>
