@@ -10,21 +10,24 @@ const Contact = () => {
 
     return (
             <ThemeProvider theme={theme}>
-
                 <Container id ='contact'
-                     maxWidth='xl' style={{
+                     maxWidth='xl' sx={{
                     display:'flex',
                     justifyContent: 'space-between',
-                    flex:'wrap',
+                    flexWrap:'wrap',
                     flexGrow: 1,
                 }}>
-                <Box  component={Paper}  style ={{margin: '0 auto 30px',
-                    padding:'20px 5px',}}>
-                    <CardContent>
+                <Box  component={Paper}  style ={{
+                    margin: '0 60px 30px',
+                    padding:'35px',
+                    maxWidth: '450px'}}>
+                    <CardContent sx={{
+                            display:'flex',
+                            justifyContent: 'center'}}>
                         <img src={imageFront} alt='pasieka' style={{
                             // width: '100%',
                             maxHeight:'500px',
-                            borderRadius:'4px'
+                            borderRadius:'4px',
                         }}/>
                     </CardContent>
 
@@ -32,7 +35,7 @@ const Contact = () => {
 
                 <Card style={{
                     maxWidth: '450px',
-                    margin: '0 auto 30px',
+                    margin: '0 60px 30px',
                     padding:'20px 5px'
                 }}>
                     <CardContent>

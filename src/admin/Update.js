@@ -67,8 +67,13 @@ const Update =() => {
         }
         if(data) {
             setFormError(null);
+            navigate('/admin');
         }
-        navigate('/admin');
+        if(name && description && count && weight && price && img) {
+            navigate('/admin');
+        }
+
+
     }
 
     return (

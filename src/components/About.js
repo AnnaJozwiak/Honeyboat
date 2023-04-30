@@ -11,6 +11,7 @@ const About = () => {
 
         <ThemeProvider theme={theme}>
             <Container maxWidth="xl"
+                       id='about'
                        component={Paper}
                        sx={{
                            paddingTop:'16px'

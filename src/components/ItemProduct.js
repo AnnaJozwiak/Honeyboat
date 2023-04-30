@@ -1,12 +1,28 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {ThemeProvider,Container, Box, Typography, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
-
+import {useNavigate} from "react-router-dom";
 import theme from "../theme";
 
-import blob from '../assets/blob2.svg'
-import imageTop from "../assets/wave4.svg";
+import {CartContext} from "./shop/CartContext";
 
-const ItemProduct = ({product}) => {
+import blob from '../assets/blob2.svg'
+
+// import {ShopContext} from "./shop/ShopContext";
+
+const ItemProduct = ({product, handleAddProduct}) => {
+    const navigate = useNavigate();
+    const cart = useContext(CartContext);
+
+    // const {addToCart, cartItems} =useContext(ShopContext);
+
+    const handleOrder = () => {
+        navigate('/shop');
+        const id = product.id;
+    }
+
+    const productQuantity = cart.getProductQuantity(product.id)
+
+
 
     return(
 
@@ -87,16 +103,36 @@ const ItemProduct = ({product}) => {
                         >Cena: {product.price}zł
                         </Typography>
 
-                        <Button variant='contained'
-                            color='secondary'
-                        >Dodaj do koszyka</Button>
-                      </Box>
+
+
+                        {/*<Button variant='contained'*/}
+                        {/*        color='secondary'*/}
+                        {/*        href='/shop'*/}
+                        {/*        onClick={()=>cart.addOneToCart(product.id)}*/}
+                        {/*>Dodaj do koszyka</Button>*/}
+
+                            {productQuantity > 0 ?
+                                <>
+                                    {/*<Button onClick={()=> cart.removeOneFromCart(product.id)}>-</Button>*/}
+                                    <Typography>W koszyku:
+                                        <Button onClick={()=> cart.removeOneFromCart(product.id)}>-</Button>
+                                        {productQuantity}
+                                        <Button onClick={() => cart.addOneToCart(product.id)}>+</Button>
+                                    </Typography>
+                                    {/*<Button onClick={() => cart.addOneToCart(product.id)}>+</Button>*/}
+                                    <Button onClick={()=> cart.deleteFromCart(product.id)}>Usuń z koszyka</Button>
+                                </>
+                                :
+                                <Button variant='contained'
+                                        color='secondary'
+                                        // href='/shop'
+                                        onClick={()=>cart.addOneToCart(product.id)}
+                                >Dodaj do koszyka</Button>
+                            }
+
+                        </Box>
                     </CardContent>
-
                 </Box>
-
-
-
             </Container >
         </ThemeProvider >
     )

@@ -1,41 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useNavigate, Link} from "react-router-dom";
-import theme from "../theme";
+import {useNavigate,NavLink} from "react-router-dom";
+import theme from "../../theme";
 
-// const pages = ['O pasiece', 'Nasze przygody', 'Współpraca','Sklep', 'Kontakt'];
-const pages = [
-    {
-    name:'O pasiece',
-    link:'#about'
-    },
-    // {
-    // name:'Nasze przygody',
-    // link:'/'
-    // },
-    {
-    name:'Współpraca',
-    link:'#colaboration'
-    },
-    {
-    name:'Sklep',
-    link:'/shop'
-    },
-    {
-        name:'Kontakt',
-        link:'#contact'
-    },
-    {
-        name:'Zaloguj',
-        link:'/login'
-    }
-];
+import {CartContext} from "./CartContext";
 
 
-const Header =() => {
+const ShopHeader =() => {
+    const cart = useContext(CartContext);
+    // const productsCount = cart.items.reduce((sum, product)=> sum + product.quantity,0);
+
     const [anchorElNav, setAnchorElNav] = useState(null);
 
+    const pages = ['Strona główna','Sklep', `Koszyk`];
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -67,15 +45,17 @@ const Header =() => {
                                 ml:{ xs: 5, md: 12, lg: 17,xl:15 },
                                 mt:{ xs: 2, xl:3 },
                             }}
+                            component={NavLink}
+                            to={'/'}
                         >
-                            <img src={require('../assets/logo bez tla.png')} alt='logo' />
+                            <img src={require('../../assets/logo bez tla.png')} alt='logo' />
 
                         </Typography>
 
                         <Box sx={{
                             flexGrow: 1,
                             display: { xs: 'flex', md: 'none' },
-                             justifyContent:'flex-end'}}>
+                            justifyContent:'flex-end'}}>
                             <IconButton
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
@@ -111,12 +91,9 @@ const Header =() => {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                                        <a href={page.link} style={{
-                                            textDecoration:'none',
-                                            color: 'black'
-                                        }}><Typography textAlign="center" sx={{
-                                        }}>{page.name}</Typography></a>
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center" sx={{
+                                        }}>{page}</Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -130,14 +107,13 @@ const Header =() => {
                                 display: { xs: 'none', md: 'flex' },
                                 justifyContent:'flex-end' }}>
                             {pages.map((page) => (
-                                <a href={page.link} style={{
-                                    textDecoration:'none',
-
-                                }}><Button
-                                    // component ={Link}
-                                    // to={page.link}
-                                    key={page.name}
+                                <Button
+                                    component = 'a'
+                                    // href="/"
+                                    // href= `#${page}`
+                                    key={page}
                                     onClick={handleCloseNavMenu}
+                                    // onclick="location.href='https://google.com'
                                     sx={{ mb: 5,
                                         color: 'black',
                                         display: 'block' ,
@@ -146,8 +122,8 @@ const Header =() => {
                                         height:'100%'}}
 
                                 >
-                                    {page.name}
-                                </Button></a>
+                                    {page}
+                                </Button>
                             ))}
                         </Box>
                     </Toolbar>
@@ -156,4 +132,4 @@ const Header =() => {
         </ThemeProvider>
     );
 }
-export default Header;
+export default ShopHeader;

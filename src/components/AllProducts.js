@@ -9,6 +9,7 @@ const imageFront= require('../images/foto6.jpg');
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
+    const [cartItems,setCartItems] =useState([])
 
     const getProducts = async () =>{
         const { data } = await supabase
@@ -23,6 +24,15 @@ const AllProducts = () => {
         getProducts();
     }, []);
 
+    // const handleAddProduct =(product) => {
+    //     const ProductExist = cartItems.find((item) => item.id === product.id);
+    //     if(ProductExist) {
+    //         setCartItems(cartItems.map((item) => item.id === product.id ?
+    //             {...ProductExist, quantity: ProductExist.quantity +1}:item))
+    //     } else  {
+    //         setCartItems([...cartItems, {...product,quantity:1}])
+    //     }
+    // }
 
     return(
 
@@ -51,25 +61,13 @@ const AllProducts = () => {
                     gap: '20px',
                     // margin: '0 auto',
                 }}>
-                    {/*<CardContent*/}
-                    {/*    sx={{*/}
-                    {/*    display:'flex',*/}
-                    {/*   flexGrow: 1,*/}
-                    {/*    flexWrap: 'wrap',*/}
-                    {/*    gap: '30px',*/}
-                    {/*    margin: '0 auto',*/}
-                    {/*}}*/}
-                    {/*>*/}
-                        {products.map((product, index) => (
+                        {products.map((product) => (
                             <ItemProduct
                                 key={product.id}
                                 product={product}
-                                index = {index}
+                                // handleAddProduct={handleAddProduct}
                             />
                         ))}
-
-                    {/*</CardContent>*/}
-
                 </Box>
 
 

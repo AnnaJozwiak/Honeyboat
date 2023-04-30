@@ -9,6 +9,7 @@ const Colaboration = () => {
 
         <ThemeProvider theme={theme}>
             <Container maxWidth="lg"
+                       id='colaboration'
                        sx={{
                            backgroundColor:'transparent',
                            mt:{ xs: 1, md: 10, lg: '20px' },
@@ -37,7 +38,7 @@ const Colaboration = () => {
                                     }}
                         >
                            Jesteś sadownikiem lub rolnikiem z uprawami kwitnącymi? <br/>
-                            Chcesz mieć większe plonu?<br/>
+                            Chcesz mieć większe plony?<br/>
                             Skontaktuj się z naszą pasieką wędrowną. Wypełnij formularz kontaktowy lub zadzwoń!
                         </Typography>
                     </CardContent>

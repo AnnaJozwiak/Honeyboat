@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import imageBack from "../assets/tlo4.png";
 import {Button, Card, CardContent, CssBaseline, Grid, TextField, ThemeProvider, Typography} from "@mui/material";
 import imageTop from "../assets/wave4.svg";
 import { Route, Routes, Link, BrowserRouter} from 'react-router-dom';
 import theme from "../theme";
+
+import supabase from "./SupabaseClient";
 
 
 const Login = () => {
@@ -19,6 +21,7 @@ const Login = () => {
             margin:0
 
         }}>
+            <CssBaseline/>
             <ThemeProvider theme={theme}>
                 <Card style={{
                     maxWidth: '450px',
