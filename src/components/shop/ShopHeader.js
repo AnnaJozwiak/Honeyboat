@@ -1,19 +1,45 @@
-import React, {useState, useContext} from 'react';
-import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider} from '@mui/material';
+import {useState, useContext, useEffect} from 'react';
+import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider, Modal} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useNavigate,NavLink} from "react-router-dom";
 import theme from "../../theme";
 
 import {CartContext} from "./CartContext";
 
+const style = {
+    position: 'absolute',
+    top: '26%',
+    left: '85%',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #F3D188',
+    boxShadow: 24,
+    p: 4,
+};
 
 const ShopHeader =() => {
     const cart = useContext(CartContext);
-    // const productsCount = cart.items.reduce((sum, product)=> sum + product.quantity,0);
 
     const [anchorElNav, setAnchorElNav] = useState(null);
 
-    const pages = ['Strona główna','Sklep', `Koszyk`];
+    const pages = [{
+        name: 'Strona główna',
+        link: '/'
+    }
+    ];
+    //modal
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    //liczba produktow w koszyku
+    // const [productsCount, setProductsCount] = useState([]);
+    // useEffect(()=> {
+    //     setProductsCount(cart.items?.reduce((sum, product)=> sum + product.quantity,0));
+    // },[cart.items]);
+
+    // const productsCount= cart.items&&cart.items.reduce((sum, product)=>parseFloat(sum + Number(product.quantity)),0);
+
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -22,6 +48,7 @@ const ShopHeader =() => {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
+
 
     return (
         <ThemeProvider theme={theme}>
@@ -91,9 +118,11 @@ const ShopHeader =() => {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                    <MenuItem key={page.name}
+                                              href ={page.link}
+                                              onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center" sx={{
-                                        }}>{page}</Typography>
+                                        }}>{page.name}</Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -109,11 +138,9 @@ const ShopHeader =() => {
                             {pages.map((page) => (
                                 <Button
                                     component = 'a'
-                                    // href="/"
-                                    // href= `#${page}`
-                                    key={page}
+                                    href ={page.link}
+                                    key={page.name}
                                     onClick={handleCloseNavMenu}
-                                    // onclick="location.href='https://google.com'
                                     sx={{ mb: 5,
                                         color: 'black',
                                         display: 'block' ,
@@ -122,9 +149,32 @@ const ShopHeader =() => {
                                         height:'100%'}}
 
                                 >
-                                    {page}
+                                    {page.name}
                                 </Button>
                             ))}
+
+                                <Button onClick={handleOpen} sx={{
+                                    fontWeight: 700,
+                                    fontSize: '16px',
+                                    mb: 5}}>Koszyk ()</Button>
+                                <Modal
+                                    open={open}
+                                    onClose={handleClose}
+                                    aria-labelledby="modal-modal-title"
+                                    aria-describedby="modal-modal-description"
+                                >
+                                    <Box sx={style}>
+                                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                                            Text in a modal
+                                        </Typography>
+                                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                            {cart.items?.map((currentProduct, idx) =>{
+                                                <Typography>{currentProduct.name}</Typography>
+                                            })}
+                                            Suma: {cart.getTotalCost()}
+                                        </Typography>
+                                    </Box>
+                                </Modal>
                         </Box>
                     </Toolbar>
                 </Container>

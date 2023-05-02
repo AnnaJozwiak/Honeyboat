@@ -50,6 +50,7 @@ const Login = () => {
                                         variant='outlined'
                                         fullWidth
                                         required
+                                        type='password'
                                         color='secondary'/>
 
                                 </Grid>

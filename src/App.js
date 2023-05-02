@@ -6,8 +6,6 @@ import AdminPulpit from "./admin/AdminPulpit";
 import Update from "./admin/Update";
 import Login from "./admin/Login";
 import ShopPulpit from "./components/shop/ShopPulpit";
-import {ShopContextProvider} from "./components/shop/ShopContext";
-import Cart from "./components/shop/Cart";
 import CartProvider from "./components/shop/CartContext";
 
 function App() {
@@ -22,7 +20,6 @@ function App() {
           <Route path='/admin/:id' element={<Update/>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/shop' element={<ShopPulpit/>}/>
-          <Route path='/cart' element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
       </div>

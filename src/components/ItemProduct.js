@@ -7,18 +7,10 @@ import {CartContext} from "./shop/CartContext";
 
 import blob from '../assets/blob2.svg'
 
-// import {ShopContext} from "./shop/ShopContext";
 
-const ItemProduct = ({product, handleAddProduct}) => {
+const ItemProduct = ({product}) => {
     const navigate = useNavigate();
     const cart = useContext(CartContext);
-
-    // const {addToCart, cartItems} =useContext(ShopContext);
-
-    const handleOrder = () => {
-        navigate('/shop');
-        const id = product.id;
-    }
 
     const productQuantity = cart.getProductQuantity(product.id)
 
@@ -56,10 +48,12 @@ const ItemProduct = ({product, handleAddProduct}) => {
 
                         </Typography>
 
-                        <Typography   sx={{
-                                        mr: 3,
-                                        // ml:{ xs: 5, md: 17, xl:15 },
-                                        mt:{ xs: 2, xl:3 },
+                        <Typography   component='a'
+                                        href='/shop'
+                                         sx={{
+                                         mr: 3,
+                                         // ml:{ xs: 5, md: 17, xl:15 },
+                                         mt:{ xs: 2, xl:3 },
                                         // width: { xs: '30px', sm: '50px', xl: '150px'},
                                         backgroundImage: `url(${blob})`,
                                         backgroundRepeat: 'no-repeat',
@@ -84,24 +78,25 @@ const ItemProduct = ({product, handleAddProduct}) => {
                                         mt:{ xs: 2, xl:3 },
                                         fontSize: 14,
                                         fontWeight: 400,
+                                        minHeight:'120px'
                                     }}
                         >{product.description}
 
                         </Typography>
 
                         <Box sx ={{justifyItems:'flex-end', alignSelf:'flex-end'}}>
-                        <Typography variant="body2"
-                                    sx={{
-                                        mr: 3,
-                                        // ml:{ xs: 5, md: 17, xl:15 },
-                                        mt:{ xs: 2, xl:3 },
-                                        fontSize: 16,
-                                        fontWeight: 600,
-                                       textAlign:'right',
-                                        marginRight:0
-                                    }}
-                        >Cena: {product.price}zł
-                        </Typography>
+                        {/*<Typography variant="body2"*/}
+                        {/*            sx={{*/}
+                        {/*                mr: 3,*/}
+                        {/*                // ml:{ xs: 5, md: 17, xl:15 },*/}
+                        {/*                mt:{ xs: 2, xl:3 },*/}
+                        {/*                fontSize: 16,*/}
+                        {/*                fontWeight: 600,*/}
+                        {/*               textAlign:'right',*/}
+                        {/*                marginRight:0*/}
+                        {/*            }}*/}
+                        {/*>Cena: {product.price}zł*/}
+                        {/*</Typography>*/}
 
 
 
@@ -111,24 +106,24 @@ const ItemProduct = ({product, handleAddProduct}) => {
                         {/*        onClick={()=>cart.addOneToCart(product.id)}*/}
                         {/*>Dodaj do koszyka</Button>*/}
 
-                            {productQuantity > 0 ?
-                                <>
-                                    {/*<Button onClick={()=> cart.removeOneFromCart(product.id)}>-</Button>*/}
-                                    <Typography>W koszyku:
-                                        <Button onClick={()=> cart.removeOneFromCart(product.id)}>-</Button>
-                                        {productQuantity}
-                                        <Button onClick={() => cart.addOneToCart(product.id)}>+</Button>
-                                    </Typography>
-                                    {/*<Button onClick={() => cart.addOneToCart(product.id)}>+</Button>*/}
-                                    <Button onClick={()=> cart.deleteFromCart(product.id)}>Usuń z koszyka</Button>
-                                </>
-                                :
-                                <Button variant='contained'
-                                        color='secondary'
-                                        // href='/shop'
-                                        onClick={()=>cart.addOneToCart(product.id)}
-                                >Dodaj do koszyka</Button>
-                            }
+                            {/*{productQuantity > 0 ?*/}
+                            {/*    <>*/}
+                            {/*        /!*<Button onClick={()=> cart.removeOneFromCart(product.id)}>-</Button>*!/*/}
+                            {/*        <Typography>W koszyku:*/}
+                            {/*            <Button onClick={()=> cart.removeOneFromCart(product.id)}>-</Button>*/}
+                            {/*            {productQuantity}*/}
+                            {/*            <Button onClick={() => cart.addOneToCart(product.id)}>+</Button>*/}
+                            {/*        </Typography>*/}
+                            {/*        /!*<Button onClick={() => cart.addOneToCart(product.id)}>+</Button>*!/*/}
+                            {/*        <Button onClick={()=> cart.deleteFromCart(product.id)}>Usuń z koszyka</Button>*/}
+                            {/*    </>*/}
+                            {/*    :*/}
+                            {/*    <Button variant='contained'*/}
+                            {/*            color='secondary'*/}
+                            {/*            // href='/shop'*/}
+                            {/*            onClick={()=>cart.addOneToCart(product.id)}*/}
+                            {/*    >Dodaj do koszyka</Button>*/}
+                            {/*}*/}
 
                         </Box>
                     </CardContent>

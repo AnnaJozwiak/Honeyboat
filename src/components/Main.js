@@ -10,7 +10,7 @@ import imageBack from '../assets/tlo4.png';
 import imageTop from '../assets/wave4.svg';
 import Banner from "./Banner";
 import Colaboration from "./Colaboration";
-import AllProducts from "./AllProducts";
+import Products from "./Products";
 
 const Main = () => {
 
@@ -34,7 +34,7 @@ const Main = () => {
 
             </div>
             <About/>
-            <AllProducts/>
+            <Products/>
             <Colaboration/>
             <Contact/>
 

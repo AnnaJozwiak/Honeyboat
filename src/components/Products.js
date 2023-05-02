@@ -7,7 +7,7 @@ import ItemProduct from "./ItemProduct";
 
 const imageFront= require('../images/foto6.jpg');
 
-const AllProducts = () => {
+const Products = () => {
     const [products, setProducts] = useState([]);
     const [cartItems,setCartItems] =useState([])
 
@@ -24,15 +24,6 @@ const AllProducts = () => {
         getProducts();
     }, []);
 
-    // const handleAddProduct =(product) => {
-    //     const ProductExist = cartItems.find((item) => item.id === product.id);
-    //     if(ProductExist) {
-    //         setCartItems(cartItems.map((item) => item.id === product.id ?
-    //             {...ProductExist, quantity: ProductExist.quantity +1}:item))
-    //     } else  {
-    //         setCartItems([...cartItems, {...product,quantity:1}])
-    //     }
-    // }
 
     return(
 
@@ -51,7 +42,8 @@ const AllProducts = () => {
                         fontWeight: 700,
                         textAlign:'center',
                         paddingBottom:'50px'
-                    }}>W naszej ofercie posiadamy</Typography>
+                    }}>Nasze miody</Typography>
+
 
                 </Box>
                 <Box sx={{
@@ -65,10 +57,19 @@ const AllProducts = () => {
                             <ItemProduct
                                 key={product.id}
                                 product={product}
-                                // handleAddProduct={handleAddProduct}
+
                             />
                         ))}
                 </Box>
+                <Button variant='contained'
+                        color='secondary'
+                        href='/shop'
+                        // fullWidth
+                        sx ={{marginTop:'20px',
+                            width:'100%'
+                        }}>
+                    Przejdź do sklepu
+                </Button>
 
 
 
@@ -77,4 +78,4 @@ const AllProducts = () => {
     )
 }
 
-export default AllProducts;
+export default Products;

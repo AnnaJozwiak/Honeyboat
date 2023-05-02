@@ -94,25 +94,25 @@ const Footer =()=> {
                             textDecoration: 'none',
                             textTransform:'none'
                         }}>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#' >O pasiece</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#'>Nasze przygody</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Sklep</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Kontakt</Button>
+                            <Button sx={{textTransform:'none', textDecoration:'none'}} href ='/#about' >O pasiece</Button>
+                            <Button sx={{textTransform:'none', textDecoration:'none'}} href ='/#colaboration'>Współpraca</Button>
+                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='/shop'>Sklep</Button>
+                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#contact'>Kontakt</Button>
                         </Box>
 
-                        <Box style={{
-                            display:'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                             fontSize:13,
-                             textDecoration: 'none',
-                             textTransform:'none'
-                        }}>
-                            <Button sx={{textTransform:'none'}} >Regulamin</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Dostawa i płatności</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#'>Polityka prywatności</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Współpraca</Button>
-                        </Box>
+                        {/*<Box style={{*/}
+                        {/*    display:'flex',*/}
+                        {/*    flexDirection: 'column',*/}
+                        {/*    alignItems: 'flex-start',*/}
+                        {/*     fontSize:13,*/}
+                        {/*     textDecoration: 'none',*/}
+                        {/*     textTransform:'none'*/}
+                        {/*}}>*/}
+                        {/*    <Button sx={{textTransform:'none'}} >Regulamin</Button>*/}
+                        {/*    <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='/'>Dostawa i płatności</Button>*/}
+                        {/*    <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#'>Polityka prywatności</Button>*/}
+                        {/*    <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Współpraca</Button>*/}
+                        {/*</Box>*/}
                         {/*<ul>*/}
                         {/*      <a href ='#>'><li>Regulamin</li></a>*/}
                         {/*      <a href ='#>'><li>Dostawa i płatności</li></a>*/}

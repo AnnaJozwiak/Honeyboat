@@ -7,10 +7,10 @@ import imageTop from '../../assets/wave4.svg';
 
 import ShopHeader from "./ShopHeader";
 import Footer from "../Footer";
-import Cart from "./Cart";
 
 import supabase from "../../admin/SupabaseClient";
-import AllProducts from "../AllProducts";
+
+import ShopAllProducts from "./ShopAllProducts";
 
 
 const ShopPulpit = () => {
@@ -56,11 +56,10 @@ const ShopPulpit = () => {
                 backgroundImage: `url(${imageTop})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                height:'50hv',
+                // height:'70hv',
             }}>
                 <ShopHeader/>
-              {/*<Cart cartItems={cartItems}/>*/}
-                <AllProducts/>
+                <ShopAllProducts/>
 
             </div>
 
@@ -72,7 +71,7 @@ const ShopPulpit = () => {
                 backgroundColor:'#F3D188'
 
             }}>
-                {/*<Footer/>*/}
+                <Footer/>
             </div>
 
 

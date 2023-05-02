@@ -31,7 +31,8 @@ const About = () => {
                         <img src={imageFront} alt='pasieka' style={{
                             width: '100%',
                             margin: '0 auto',
-                            borderRadius:'4px'
+                            borderRadius:'4px',
+                            objectFit: 'contain'
                         }}/>
                         <Typography variant="body2"
                                     sx={{
