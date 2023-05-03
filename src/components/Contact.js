@@ -42,6 +42,7 @@ const Contact = () => {
                         <Typography variant='h3'
                                     style={{
                                         marginBottom: '10px',
+                                        fontSize:'20px'
                                     }}>
                             Skontaktuj się z nami!
                         </Typography>

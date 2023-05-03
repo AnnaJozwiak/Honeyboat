@@ -20,7 +20,7 @@ const theme = createTheme({
             'Montserrat',
             'san-serif',
         ].join(','),
-        fontSize: '14px',
+        fontSize: 14,
         textDecoration: 'none',
         letterSpacing: '.3rem',
         flexGrow: 1,

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {ThemeProvider,Container, Box, Typography, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
 
 import theme from "../theme";
+import ImgCarousel from "./Carousel";
 
 const imageFront= require('../images/foto6.jpg');
 
@@ -28,12 +29,21 @@ const About = () => {
 
                 <Box>
                     <CardContent>
-                        <img src={imageFront} alt='pasieka' style={{
-                            width: '100%',
-                            margin: '0 auto',
-                            borderRadius:'4px',
-                            objectFit: 'contain'
-                        }}/>
+                        {/*<img src={imageFront} alt='pasieka' style={{*/}
+                        {/*    width: '100%',*/}
+                        {/*    margin: '0 auto',*/}
+                        {/*    borderRadius:'4px',*/}
+                        {/*    objectFit: 'contain'*/}
+                        {/*}}/>*/}
+                        <Box maxWidth='md'
+                            sx={{
+                                // display:'flex',
+                                // justifyContent:'center',
+                                margin: '0 auto'
+                            }}>
+                            <ImgCarousel/>
+                        </Box>
+
                         <Typography variant="body2"
                                     sx={{
                                         mr: 3,

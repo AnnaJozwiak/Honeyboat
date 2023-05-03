@@ -6,7 +6,6 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-// import { makeStyles } from '@mui/styles';
 
 import theme from "../theme";
 
@@ -22,30 +21,6 @@ const pagesCol1 = [
     {
         name:'Współpraca',
         link:'/#colaboration'
-    },
-    {
-        name:'Sklep',
-        link:'/shop'
-    },
-    {
-        name:'Kontakt',
-        link:'/#contact'
-    },
-
-];
-
-const pagesCol2 = [
-    {
-        name:'Skontaktuj się z nami',
-        link:''
-    },
-    {
-        name:'honeyboat.pl@gmai.com',
-        link:'mailto:honeyboat.pl@gmail.com'
-    },
-    {
-        name:'663 150 394',
-        link:'tel:663150394'
     },
     {
         name:'Sklep',
@@ -153,7 +128,7 @@ const Footer =()=> {
                             textDecoration: 'none',
                             textTransform:'none'
                         }} >
-                            <Typography sx={{padding:'6px 8px 6px 0px', fontWeight:'500'}}>Skontaktuj się z nami:</Typography>
+                            <Typography sx={{padding:'6px 8px 6px 0px', fontWeight:'500', fontSize:'14px'}}>Skontaktuj się z nami:</Typography>
                             <Button sx={{textTransform:'none'}} href ='mailto:honeyboat.pl@gmail.com' target="_blank" underline="none"><AlternateEmailIcon /> honeyboat.pl@gmail.com</Button>
                             <Button sx={{textTransform:'none'}} href ='tel:663150394' target="_blank"><PhoneIcon /> 663 150 394</Button>
                             <Button sx={{textTransform:'none'}} href ='https://wa.me/48663150394' target="_blank"><WhatsAppIcon /> Whats app</Button>

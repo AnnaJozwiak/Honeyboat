@@ -122,21 +122,15 @@ const Header =() => {
                         </Box>
 
 
-
                         <Box
                             sx={{
                                 flexGrow: 1,
                                 display: { xs: 'none', md: 'flex' },
                                 justifyContent:'flex-end' }}>
                             {pages.map((page) => (
-                                <a href={page.link}
-                                   key={page.name}
-                                   style={{
-                                    textDecoration:'none',
-
-                                }}><Button
-                                    // component ={Link}
-                                    // to={page.link}
+                            <Button
+                                    href={page.link}
+                                    key={page.name}
 
                                     onClick={handleCloseNavMenu}
                                     sx={{ mb: 5,
@@ -145,10 +139,9 @@ const Header =() => {
                                         fontWeight: 700,
                                         fontSize: '16px',
                                         height:'100%'}}
-
                                 >
                                     {page.name}
-                                </Button></a>
+                                </Button>
                             ))}
                         </Box>
                     </Toolbar>
