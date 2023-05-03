@@ -101,6 +101,14 @@ export function CartProvider({children}) {
         });
     }
 
+    // function getTotalCost() {
+    //     let totalCost = 0;
+    //     cartProducts.map((product) => {
+    //         const productData = getProducts(product.id);
+    //         totalCost += (parseFloat(productData.price) * product.quantity);
+    //     });
+    // }
+
     const contextValue = {
         item: [],
         getProductQuantity,

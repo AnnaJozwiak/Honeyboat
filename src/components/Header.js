@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {useNavigate, Link} from "react-router-dom";
 import theme from "../theme";
 
-// const pages = ['O pasiece', 'Nasze przygody', 'Współpraca','Sklep', 'Kontakt'];
 const pages = [
     {
     name:'O pasiece',
@@ -130,13 +129,15 @@ const Header =() => {
                                 display: { xs: 'none', md: 'flex' },
                                 justifyContent:'flex-end' }}>
                             {pages.map((page) => (
-                                <a href={page.link} style={{
+                                <a href={page.link}
+                                   key={page.name}
+                                   style={{
                                     textDecoration:'none',
 
                                 }}><Button
                                     // component ={Link}
                                     // to={page.link}
-                                    key={page.name}
+
                                     onClick={handleCloseNavMenu}
                                     sx={{ mb: 5,
                                         color: 'black',

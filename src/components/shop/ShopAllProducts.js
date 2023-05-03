@@ -31,8 +31,9 @@ const AllProducts = () => {
             <Container maxWidth="xl"
                        component={Paper}
                        sx={{
-                           marginTop: '100px',
-                           padding:'30px 0'
+                           mt: '100px',
+                           mb:'100px',
+                           padding:'30px 0',
                        }}>
                 <Box maxWidth="xl"
                 >

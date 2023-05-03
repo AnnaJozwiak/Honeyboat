@@ -15,9 +15,9 @@ import ShopAllProducts from "./ShopAllProducts";
 
 const ShopPulpit = () => {
     const [products, setProducts] = useState([]);
-    const [cartItems,setCartItems] =useState([])
+    // const [cartItems,setCartItems] =useState([])
 
-    const { id } =useParams();
+    // const { id } =useParams();
 
     const getProducts = async () =>{
         const { data } = await supabase
@@ -34,42 +34,40 @@ const ShopPulpit = () => {
         getProducts();
     }, []);
 
-    const handleAddProduct =(product) => {
-        const ProductExist = cartItems.find((item) => item.id === product.id);
-        if(ProductExist) {
-            setCartItems(cartItems.map((item) => item.id === product.id ?
-                {...ProductExist, quantity: ProductExist.quantity +1}:item))
-        } else  {
-            setCartItems([...cartItems, {...product,quantity:1}])
-        }
-    }
+    // const handleAddProduct =(product) => {
+    //     const ProductExist = cartItems.find((item) => item.id === product.id);
+    //     if(ProductExist) {
+    //         setCartItems(cartItems.map((item) => item.id === product.id ?
+    //             {...ProductExist, quantity: ProductExist.quantity +1}:item))
+    //     } else  {
+    //         setCartItems([...cartItems, {...product,quantity:1}])
+    //     }
+    // }
 
     return (
         <div style={{
             backgroundImage: `url(${imageBack})`,
             backgroundRepeat: 'repeat',
             backgroundSize: 'contain',
-            height:'100vh'
+            // height:'100vh'
         }}>
             <CssBaseline/>
             <div style={{
                 backgroundImage: `url(${imageTop})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                // height:'70hv',
+                // height:'100hv',
             }}>
                 <ShopHeader/>
                 <ShopAllProducts/>
 
             </div>
-
             <div style={{
                 // backgroundImage: `url(${image3})`,
                 // backgroundRepeat: 'no-repeat',
                 // backgroundSize: 'cover',
                 // height:'100vh',
                 backgroundColor:'#F3D188'
-
             }}>
                 <Footer/>
             </div>

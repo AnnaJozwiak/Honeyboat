@@ -10,11 +10,56 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import theme from "../theme";
 
-const pages = ['O pasiece', 'Nasze przygody', 'Sklep', 'Kontakt'];
+const pagesCol1 = [
+    {
+        name:'O pasiece',
+        link:'/#about'
+    },
+    // {
+    // name:'Nasze przygody',
+    // link:'/'
+    // },
+    {
+        name:'Współpraca',
+        link:'/#colaboration'
+    },
+    {
+        name:'Sklep',
+        link:'/shop'
+    },
+    {
+        name:'Kontakt',
+        link:'/#contact'
+    },
+
+];
+
+const pagesCol2 = [
+    {
+        name:'Skontaktuj się z nami',
+        link:''
+    },
+    {
+        name:'honeyboat.pl@gmai.com',
+        link:'mailto:honeyboat.pl@gmail.com'
+    },
+    {
+        name:'663 150 394',
+        link:'tel:663150394'
+    },
+    {
+        name:'Sklep',
+        link:'/shop'
+    },
+    {
+        name:'Kontakt',
+        link:'/#contact'
+    },
+
+];
 
 
 const Footer =()=> {
-    // const classes = useStyles();
 
     return (
         <ThemeProvider theme={theme}>
@@ -31,8 +76,6 @@ const Footer =()=> {
                     <Typography
                         variant="string"
                         noWrap
-                        component="a"
-                        href="/"
                         sx={{
                             mr: 3,
                             display: 'flex',
@@ -43,24 +86,26 @@ const Footer =()=> {
                     >
                         <img src={require('../assets/Font.png')} alt='logo' />
                         <IconButton
-                            size="large"
                             href='https://www.instagram.com/honeyboat.pl/'
-                            color="black"
-                            rel="noopener"
+                            target='_blank'
                             sx={{
                                 mb:3,
+                                fontSize: '40px',
+                                // color:'black',
+                                mt:'12px',
+                                ml: '20px'
                             }}
                         >
                             <InstagramIcon />
-
                         </IconButton>
                         <IconButton
-                            size="large"
                             href='https://www.facebook.com/profile.php?id=100083395718000'
-                            color="black"
-                            rel="noopener"
+                            target='_blank'
                             sx={{
                                 mb:3,
+                                fontSize: '40px',
+                                // color:'black',
+                                mt:'12px'
                             }}
                         >
                             <FacebookIcon />
@@ -68,24 +113,38 @@ const Footer =()=> {
                     </Typography>
 
                     <Typography
-                        component="a"
-                        href="/"
                         sx={{
                             mr: 3,
                             display: 'flex',
                             flexWrap:'wrap',
-                            // display: { xs: 'none', md: 'flex' },
-                            // height: { xs: '30px', md: '40px', xl: '50px'},
+                            gap: '100px',
                             ml:{ xs: 5, md: 17, xl:15 },
                             mt:{ xs: 2, xl:3 },
                             fontSize: 14
                         }}
                     >
-                        {/*<ul>*/}
-                        {/*    <a href ='#>'><li>O pasiece</li></a>*/}
-                        {/*    <a href ='#>'><li>Nasze przygody</li></a>*/}
-                        {/*    <a href ='#>'><li>Sklep</li></a>*/}
-                        {/*</ul>*/}
+
+                        <Box style={{
+                            display:'flex',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            fontSize:13,
+                            textDecoration: 'none',
+                            textTransform:'none',
+
+                        }}>
+                            {pagesCol1.map((page) => (
+                                   <Button
+                                    sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
+                                    href={page.link}
+                                    key={page.name}
+                                >
+                                    {page.name}
+                                </Button>
+                            ))}
+                        </Box>
+
+
                         <Box style={{
                             display:'flex',
                             flexDirection: 'column',
@@ -93,46 +152,14 @@ const Footer =()=> {
                             fontSize:13,
                             textDecoration: 'none',
                             textTransform:'none'
-                        }}>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}} href ='/#about' >O pasiece</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}} href ='/#colaboration'>Współpraca</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='/shop'>Sklep</Button>
-                            <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#contact'>Kontakt</Button>
-                        </Box>
-
-                        {/*<Box style={{*/}
-                        {/*    display:'flex',*/}
-                        {/*    flexDirection: 'column',*/}
-                        {/*    alignItems: 'flex-start',*/}
-                        {/*     fontSize:13,*/}
-                        {/*     textDecoration: 'none',*/}
-                        {/*     textTransform:'none'*/}
-                        {/*}}>*/}
-                        {/*    <Button sx={{textTransform:'none'}} >Regulamin</Button>*/}
-                        {/*    <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='/'>Dostawa i płatności</Button>*/}
-                        {/*    <Button sx={{textTransform:'none', textDecoration:'none'}} href ='#'>Polityka prywatności</Button>*/}
-                        {/*    <Button sx={{textTransform:'none', textDecoration:'none'}}  href ='#'>Współpraca</Button>*/}
-                        {/*</Box>*/}
-                        {/*<ul>*/}
-                        {/*      <a href ='#>'><li>Regulamin</li></a>*/}
-                        {/*      <a href ='#>'><li>Dostawa i płatności</li></a>*/}
-                        {/*      <a href ='#>'><li>Polityka prywatności</li></a>*/}
-                        {/*</ul>*/}
-                        <Typography style={{
-                            display:'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            fontSize:13,
-                            textDecoration: 'none',
-                            textTransform:'none'
                         }} >
-                            <Link  underline="none">Skontaktuj się z nami:</Link>
-                            <Button sx={{textTransform:'none'}} href ='#' target="_blank" underline="none"><AlternateEmailIcon /> honeyboat.pl@gmail.pl</Button>
-                            <Button sx={{textTransform:'none'}} href ='#' target="_blank"><PhoneIcon /> 663 150 394</Button>
+                            <Typography sx={{padding:'6px 8px 6px 0px', fontWeight:'500'}}>Skontaktuj się z nami:</Typography>
+                            <Button sx={{textTransform:'none'}} href ='mailto:honeyboat.pl@gmail.com' target="_blank" underline="none"><AlternateEmailIcon /> honeyboat.pl@gmail.com</Button>
+                            <Button sx={{textTransform:'none'}} href ='tel:663150394' target="_blank"><PhoneIcon /> 663 150 394</Button>
                             <Button sx={{textTransform:'none'}} href ='https://wa.me/48663150394' target="_blank"><WhatsAppIcon /> Whats app</Button>
 
 
-                        </Typography>
+                        </Box>
                     </Typography>
 
                 </Box>
@@ -142,7 +169,11 @@ const Footer =()=> {
                     display: 'flex',
                     justifyContent:'center'
                 }}>
-                    <Typography >
+                    <Typography sx={{
+                        fontSize:13,
+                        paddingTop:'30px'
+
+                    }}>
                         Copyright © 2023 honeyboat.pl. All rights reserved.
                     </Typography>
                 </Box>

@@ -1,9 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {ThemeProvider,Container, Box, Typography, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
-import {useNavigate} from "react-router-dom";
 import theme from "../../theme";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import '../../../node_modules/font-awesome/css/font-awesome.min.css'
 
 import {CartContext} from "./CartContext";
 
@@ -13,20 +10,19 @@ import iconPlus from '../../assets/add-hexagon.svg';
 import iconDelete from '../../assets/delete.svg';
 
 const ShopItemProduct = ({product}) => {
-    const navigate = useNavigate();
     const cart = useContext(CartContext);
-
 
     const productQuantity = cart.getProductQuantity(product.id);
 
     const productsCount = cart.items?.reduce((sum, product)=> sum + product.quantity,0);
 
     console.log(productQuantity);
-    console.log('cart items '+cart.items)
+    console.log('cart items: '+cart.items)
 
     const productSum = cart.getTotalCost()
 
     console.log('sum:'+productSum)
+
     return(
 
         <ThemeProvider theme={theme}>
