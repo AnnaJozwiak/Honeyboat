@@ -53,6 +53,7 @@ const ImgCarousel = () =>{
                 showThumbs={false}
                 swipeable={true}
                 emulateTouch={true}
+                autoPlay={true}
             >
                 {/*{slides.map((slide) => {*/}
                 {/*    <div>*/}

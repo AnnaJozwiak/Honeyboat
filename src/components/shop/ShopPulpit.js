@@ -1,48 +1,15 @@
-import React, {useEffect, useState} from 'react';
 import {CssBaseline, Typography} from '@mui/material';
-import {useParams} from "react-router-dom";
 
 import imageBack from '../../assets/tlo4.png';
 import imageTop from '../../assets/wave4.svg';
 
 import ShopHeader from "./ShopHeader";
 import Footer from "../Footer";
-
-import supabase from "../../admin/SupabaseClient";
-
 import ShopAllProducts from "./ShopAllProducts";
+import Summary from "./Summary";
 
 
 const ShopPulpit = () => {
-    const [products, setProducts] = useState([]);
-    // const [cartItems,setCartItems] =useState([])
-
-    // const { id } =useParams();
-
-    const getProducts = async () =>{
-        const { data } = await supabase
-            .from("products")
-            .select();
-
-        if(data) {
-            setProducts(data);
-
-        }
-    }
-
-    useEffect(() => {
-        getProducts();
-    }, []);
-
-    // const handleAddProduct =(product) => {
-    //     const ProductExist = cartItems.find((item) => item.id === product.id);
-    //     if(ProductExist) {
-    //         setCartItems(cartItems.map((item) => item.id === product.id ?
-    //             {...ProductExist, quantity: ProductExist.quantity +1}:item))
-    //     } else  {
-    //         setCartItems([...cartItems, {...product,quantity:1}])
-    //     }
-    // }
 
     return (
         <div style={{
@@ -60,6 +27,7 @@ const ShopPulpit = () => {
             }}>
                 <ShopHeader/>
                 <ShopAllProducts/>
+                <Summary/>
 
             </div>
             <div style={{

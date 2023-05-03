@@ -7,7 +7,7 @@ export const CartContext = createContext({
     addOneToCart:() => {},
     removeOneFromCart:() => {},
     deleteFromCart: () => {},
-    getTotalCost: () => {}
+    getTotalCost: () => {},
 });
 
 export function CartProvider({children}) {
@@ -26,6 +26,7 @@ export function CartProvider({children}) {
     useEffect(() => {
         getProducts();
     }, []);
+
 
     function getProductData(id) {
         let productData = products.find(product => product.id === id);
@@ -97,27 +98,20 @@ export function CartProvider({children}) {
         let totalCost = 0;
         cartProducts.map((cartItem) => {
             const productData = getProductData(cartItem.id);
-            totalCost += (parseFloat(productData.price) * cartItem.quantity);
+            totalCost += (productData.price * cartItem.quantity);
         });
+        return totalCost;
     }
 
-    // function getTotalCost() {
-    //     let totalCost = 0;
-    //     cartProducts.map((product) => {
-    //         const productData = getProducts(product.id);
-    //         totalCost += (parseFloat(productData.price) * product.quantity);
-    //     });
-    // }
 
     const contextValue = {
-        item: [],
+        items: cartProducts,
         getProductQuantity,
         addOneToCart,
         removeOneFromCart,
         deleteFromCart,
         getTotalCost
     }
-
 
 
     return (

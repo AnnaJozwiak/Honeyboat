@@ -22,7 +22,7 @@ const BasicTable =({onAdd}) => {
         getProducts();
     }, []);
 
-
+    console.log(products)
     const handleDelete = (id)=> {
         setProducts(prevProducts => {
             return  prevProducts.filter(product => product.id !==id)

@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom';
 
 import supabase from "./SupabaseClient";
 
-import {ShopContext} from "../components/shop/ShopContext";
-
 const ItemRow = ({product, index, onDelete}) => {
 
     //usuniecie z bazy

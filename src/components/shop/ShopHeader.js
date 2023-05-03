@@ -8,8 +8,9 @@ import {CartContext} from "./CartContext";
 
 const style = {
     position: 'absolute',
-    top: '26%',
-    left: '85%',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
     border: '2px solid #F3D188',
@@ -33,13 +34,7 @@ const ShopHeader =() => {
     const handleClose = () => setOpen(false);
 
     //liczba produktow w koszyku
-    // const [productsCount, setProductsCount] = useState([]);
-    // useEffect(()=> {
-    //     setProductsCount(cart.items?.reduce((sum, product)=> sum + product.quantity,0));
-    // },[cart.items]);
-
-    // const productsCount= cart.items&&cart.items.reduce((sum, product)=>parseFloat(sum + Number(product.quantity)),0);
-
+    const productCount = cart.items.reduce((sum,product)=> sum+product.quantity,0)
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -58,7 +53,6 @@ const ShopHeader =() => {
                     // backgroundColor:'#F3D188',
                     backgroundColor:'transparent',
                     boxShadow:0,
-
                 }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -128,8 +122,6 @@ const ShopHeader =() => {
                             </Menu>
                         </Box>
 
-
-
                         <Box
                             sx={{
                                 flexGrow: 1,
@@ -147,7 +139,6 @@ const ShopHeader =() => {
                                         fontWeight: 700,
                                         fontSize: '16px',
                                         height:'100%'}}
-
                                 >
                                     {page.name}
                                 </Button>
@@ -156,7 +147,7 @@ const ShopHeader =() => {
                                 <Button onClick={handleOpen} sx={{
                                     fontWeight: 700,
                                     fontSize: '16px',
-                                    mb: 5}}>Koszyk ()</Button>
+                                    mb: 5}}>Koszyk ({productCount})</Button>
                                 <Modal
                                     open={open}
                                     onClose={handleClose}
@@ -165,13 +156,19 @@ const ShopHeader =() => {
                                 >
                                     <Box sx={style}>
                                         <Typography id="modal-modal-title" variant="h6" component="h2">
-                                            Text in a modal
+                                            Suma: {cart.getTotalCost()}zł
                                         </Typography>
                                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                            {cart.items?.map((currentProduct, idx) =>{
-                                                <Typography>{currentProduct.name}</Typography>
-                                            })}
-                                            Suma: {cart.getTotalCost()}
+                                            {productCount > 0 ?
+                                                <>
+                                                    <p>Produkty w koszyku: </p>
+                                                    {cart.items.map((product, index)=> (
+                                                        <p> {product.name}</p>
+                                                        ))}
+                                                </>
+                                                :
+                                                <h3>Brak produktów w koszyku</h3>
+                                            }
                                         </Typography>
                                     </Box>
                                 </Modal>

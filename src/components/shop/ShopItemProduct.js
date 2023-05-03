@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import {useContext, useState} from 'react';
 import {ThemeProvider,Container, Box, Typography, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
 import theme from "../../theme";
 
@@ -13,15 +13,6 @@ const ShopItemProduct = ({product}) => {
     const cart = useContext(CartContext);
 
     const productQuantity = cart.getProductQuantity(product.id);
-
-    const productsCount = cart.items?.reduce((sum, product)=> sum + product.quantity,0);
-
-    console.log(productQuantity);
-    console.log('cart items: '+cart.items)
-
-    const productSum = cart.getTotalCost()
-
-    console.log('sum:'+productSum)
 
     return(
 

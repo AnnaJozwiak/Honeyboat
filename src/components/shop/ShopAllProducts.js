@@ -5,11 +5,9 @@ import theme from "../../theme";
 import supabase from "../../admin/SupabaseClient";
 import ShopItemProduct from "./ShopItemProduct";
 
-const imageFront= require('../../images/foto6.jpg');
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
-    const [cartItems,setCartItems] =useState([])
 
     const getProducts = async () =>{
         const { data } = await supabase
@@ -38,7 +36,6 @@ const AllProducts = () => {
                 <Box maxWidth="xl"
                 >
                     <Typography  variant='h3' sx={{
-
                         fontSize: 30,
                         fontWeight: 700,
                         textAlign:'center',
@@ -57,7 +54,6 @@ const AllProducts = () => {
                         <ShopItemProduct
                             key={product.id}
                             product={product}
-                            // handleAddProduct={handleAddProduct}
                         />
                     ))}
                 </Box>
