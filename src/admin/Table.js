@@ -1,10 +1,11 @@
 import {ThemeProvider, Paper,TableRow,TableHead,TableContainer,TableCell,TableBody,Table, IconButton, Button} from '@mui/material';
 import supabase from "./SupabaseClient";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 
 import theme from "../theme";
 
 import ItemRow from "./ItemRow";
+
 
 const BasicTable =({onAdd}) => {
     const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ const BasicTable =({onAdd}) => {
         getProducts();
     }, []);
 
-    console.log(products)
+
     const handleDelete = (id)=> {
         setProducts(prevProducts => {
             return  prevProducts.filter(product => product.id !==id)

@@ -4,10 +4,7 @@ import {ThemeProvider, Container, Box, Typography, Button, IconButton, Link, Car
 import theme from "../../theme";
 import {CartContext} from "./CartContext";
 import supabase from "../../admin/SupabaseClient";
-import iconMinus from "../../assets/minus-hexagon.svg";
-import iconPlus from "../../assets/add-hexagon.svg";
-import iconDelete from "../../assets/delete.svg";
-import ShopItemProduct from "./ShopItemProduct";
+
 
 const Summary = () => {
     const cart=useContext(CartContext);

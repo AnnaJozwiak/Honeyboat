@@ -3,17 +3,20 @@ import supabase from "../../admin/SupabaseClient";
 
 export const CartContext = createContext({
     items: [],
+    dataProducts: [],
     getProductQuantity: () => {},
     addOneToCart:() => {},
     removeOneFromCart:() => {},
     deleteFromCart: () => {},
     getTotalCost: () => {},
+    getProductData: ()=> {}
 });
 
 export function CartProvider({children}) {
     const [products, setProducts] = useState([]);
     const [cartProducts, setCartProducts] = useState([])
 
+    //pobranie danych z bazy
     const getProducts = async () =>{
         const { data } = await supabase
             .from("products")
@@ -106,11 +109,13 @@ export function CartProvider({children}) {
 
     const contextValue = {
         items: cartProducts,
+        dataProducts: products,
         getProductQuantity,
         addOneToCart,
         removeOneFromCart,
         deleteFromCart,
-        getTotalCost
+        getTotalCost,
+        getProductData
     }
 
 

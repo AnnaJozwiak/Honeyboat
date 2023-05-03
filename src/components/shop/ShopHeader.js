@@ -5,6 +5,7 @@ import {useNavigate,NavLink} from "react-router-dom";
 import theme from "../../theme";
 
 import {CartContext} from "./CartContext";
+import CartProduct from "./CartProduct";
 
 const style = {
     position: 'absolute',
@@ -18,15 +19,19 @@ const style = {
     p: 4,
 };
 
+
+const logo = require('../../assets/logo bez tla.png');
+
 const ShopHeader =() => {
     const cart = useContext(CartContext);
 
     const [anchorElNav, setAnchorElNav] = useState(null);
 
-    const pages = [{
+    const pages = [
+        {
         name: 'Strona główna',
         link: '/'
-    }
+        }
     ];
     //modal
     const [open, setOpen] = useState(false);
@@ -34,7 +39,7 @@ const ShopHeader =() => {
     const handleClose = () => setOpen(false);
 
     //liczba produktow w koszyku
-    const productCount = cart.items.reduce((sum,product)=> sum+product.quantity,0)
+    const productCount = cart.items.reduce((sum,product)=> sum+product.quantity,0);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -69,7 +74,7 @@ const ShopHeader =() => {
                             component={NavLink}
                             to={'/'}
                         >
-                            <img src={require('../../assets/logo bez tla.png')} alt='logo' />
+                            <img src={logo} alt='logo' />
 
                         </Typography>
 
@@ -156,15 +161,15 @@ const ShopHeader =() => {
                                 >
                                     <Box sx={style}>
                                         <Typography id="modal-modal-title" variant="h6" component="h2">
-                                            Suma: {cart.getTotalCost()}zł
+                                            Do zapłaty: {cart.getTotalCost()}zł
                                         </Typography>
                                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                                             {productCount > 0 ?
                                                 <>
                                                     <p>Produkty w koszyku: </p>
-                                                    {cart.items.map((product, index)=> (
-                                                        <p> {product.name}</p>
-                                                        ))}
+                                                    {cart.items.map((currentProduct, index)=> (
+                                                        <CartProduct key={index} id={currentProduct.id} quantity={currentProduct.quantity} />
+                                                    ))}
                                                 </>
                                                 :
                                                 <h3>Brak produktów w koszyku</h3>

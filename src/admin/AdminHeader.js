@@ -1,6 +1,9 @@
 import {Avatar,AppBar,Box,Toolbar, Typography , Container,ThemeProvider} from '@mui/material';
-
+import {NavLink} from "react-router-dom";
 import theme from "../theme";
+
+
+const logo = require('../assets/logo bez tla.png');
 
 const AdminHeader =() => {
 
@@ -25,8 +28,10 @@ const AdminHeader =() => {
                                 ml:{ xs: 5, md: 17, xl:15 },
                                 mt:{ xs: 2, xl:3 },
                             }}
+                            component={NavLink}
+                            to={'/'}
                         >
-                            <img src={require('../assets/logo bez tla.png')} alt='logo' />
+                            <img src={logo} alt='logo' />
 
                         </Typography>
 

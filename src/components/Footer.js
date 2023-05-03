@@ -33,6 +33,7 @@ const pagesCol1 = [
 
 ];
 
+const logo = require('../assets/Font.png');
 
 const Footer =()=> {
 
@@ -59,7 +60,7 @@ const Footer =()=> {
                             mt:{ xs: 2, xl:3 },
                         }}
                     >
-                        <img src={require('../assets/Font.png')} alt='logo' />
+                        <img src={logo} alt='logo' />
                         <IconButton
                             href='https://www.instagram.com/honeyboat.pl/'
                             target='_blank'
@@ -92,7 +93,7 @@ const Footer =()=> {
                             mr: 3,
                             display: 'flex',
                             flexWrap:'wrap',
-                            gap: '100px',
+                            gap: { xs: '30px', sm: '100px'},
                             ml:{ xs: 5, md: 17, xl:15 },
                             mt:{ xs: 2, xl:3 },
                             fontSize: 14

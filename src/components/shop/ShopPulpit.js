@@ -23,11 +23,12 @@ const ShopPulpit = () => {
                 backgroundImage: `url(${imageTop})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                // height:'100hv',
+                // height:'50hv',
+                // backgroundPositionY:'-10px'
             }}>
                 <ShopHeader/>
                 <ShopAllProducts/>
-                <Summary/>
+                {/*<Summary/>*/}
 
             </div>
             <div style={{

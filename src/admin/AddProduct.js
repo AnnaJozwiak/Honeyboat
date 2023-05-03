@@ -29,7 +29,6 @@ const AddProduct = ({onCancel}) => {
             .from("products")
             .insert([{name,description,count, price,weight, img}])
 
-
         if(error) {
             setFormError('Proszę uzupełnić wszystkie pola');
         }

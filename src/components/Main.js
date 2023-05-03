@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import {CssBaseline} from '@mui/material';
 
 import Header from "./Header";
@@ -8,6 +7,7 @@ import Contact from "./Contact";
 
 import imageBack from '../assets/tlo4.png';
 import imageTop from '../assets/wave4.svg';
+
 import Banner from "./Banner";
 import Colaboration from "./Colaboration";
 import Products from "./Products";

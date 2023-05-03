@@ -1,28 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import {ThemeProvider,Container, Box, Typography,Grid, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
 
 import theme from "../theme";
 import supabase from "../admin/SupabaseClient";
 import ItemProduct from "./ItemProduct";
+import {CartContext} from "./shop/CartContext";
 
-const imageFront= require('../images/foto6.jpg');
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    const [cartItems,setCartItems] =useState([])
+    const products = useContext(CartContext);
 
-    const getProducts = async () =>{
-        const { data } = await supabase
-            .from("products")
-            .select();
-        if(data) {
-            setProducts(data);
-        }
-    }
-
-    useEffect(() => {
-        getProducts();
-    }, []);
+    // const [products, setProducts] = useState([]);
+    //
+    // const getProducts = async () =>{
+    //     const { data } = await supabase
+    //         .from("products")
+    //         .select();
+    //     if(data) {
+    //         setProducts(data);
+    //     }
+    // }
+    //
+    // useEffect(() => {
+    //     getProducts();
+    // }, []);
 
 
     return(
@@ -53,11 +54,10 @@ const Products = () => {
                     gap: '20px',
                     // margin: '0 auto',
                 }}>
-                        {products.map((product) => (
+                        {products.dataProducts.map((product) => (
                             <ItemProduct
                                 key={product.id}
                                 product={product}
-
                             />
                         ))}
                 </Box>

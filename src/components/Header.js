@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useNavigate, Link} from "react-router-dom";
 import theme from "../theme";
 
 const pages = [
@@ -30,6 +29,8 @@ const pages = [
         link:'/login'
     }
 ];
+
+const logo = require('../assets/logo bez tla.png');
 
 
 const Header =() => {
@@ -67,7 +68,7 @@ const Header =() => {
                                 mt:{ xs: 2, xl:3 },
                             }}
                         >
-                            <img src={require('../assets/logo bez tla.png')} alt='logo' />
+                            <img src={logo} alt='logo' />
 
                         </Typography>
 
