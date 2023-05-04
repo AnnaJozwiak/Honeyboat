@@ -27,13 +27,7 @@ const styleCard = {
     // width:'360px',
     // height:'520px'
 }
-const styleCarousel = {
-    height:'100%'
-}
-const styleDot = {
-    width: '16px',
-    height: '16px',
-}
+
 const styleImg = {
     width: '100%',
     height:'100p%',

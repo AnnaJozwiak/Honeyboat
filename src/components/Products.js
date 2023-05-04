@@ -1,30 +1,14 @@
-import {useContext, useEffect, useState} from 'react';
-import {ThemeProvider,Container, Box, Typography,Grid, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
+import {useContext} from 'react';
+import {ThemeProvider,Container, Box, Typography, Button,  Paper} from '@mui/material';
 
 import theme from "../theme";
-import supabase from "../admin/SupabaseClient";
+
 import ItemProduct from "./ItemProduct";
 import {CartContext} from "./shop/CartContext";
 
 
 const Products = () => {
     const products = useContext(CartContext);
-
-    // const [products, setProducts] = useState([]);
-    //
-    // const getProducts = async () =>{
-    //     const { data } = await supabase
-    //         .from("products")
-    //         .select();
-    //     if(data) {
-    //         setProducts(data);
-    //     }
-    // }
-    //
-    // useEffect(() => {
-    //     getProducts();
-    // }, []);
-
 
     return(
 
@@ -44,9 +28,8 @@ const Products = () => {
                         textAlign:'center',
                         paddingBottom:'50px'
                     }}>Nasze miody</Typography>
-
-
                 </Box>
+
                 <Box sx={{
                     display:'flex',
                     flexGrow: 1,
@@ -70,8 +53,6 @@ const Products = () => {
                         }}>
                     Przejdź do sklepu
                 </Button>
-
-
 
             </Container >
         </ThemeProvider >

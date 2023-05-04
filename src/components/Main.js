@@ -4,52 +4,28 @@ import Header from "./Header";
 import Footer from "./Footer";
 import About from "./About";
 import Contact from "./Contact";
-
-import imageBack from '../assets/tlo4.png';
-import imageTop from '../assets/wave4.svg';
-
 import Banner from "./Banner";
 import Colaboration from "./Colaboration";
 import Products from "./Products";
 
-const Main = () => {
+import imageBack from '../assets/tlo4.png';
 
+const Main = () => {
 
     return (
         <div style={{
             backgroundImage: `url(${imageBack})`,
             backgroundRepeat: 'repeat',
             backgroundSize: 'contain',
-            // height:'100vh'
         }}>
             <CssBaseline/>
-            <div style={{
-                backgroundImage: `url(${imageTop})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                height:'50hv',
-            }}>
-                <Header/>
-                <Banner/>
-
-            </div>
+           <Header/>
+            <Banner/>
             <About/>
             <Products/>
             <Colaboration/>
             <Contact/>
-
-            <div style={{
-                // backgroundImage: `url(${image3})`,
-                // backgroundRepeat: 'no-repeat',
-                // backgroundSize: 'cover',
-                // height:'100vh',
-                backgroundColor:'#F3D188'
-
-            }}>
-                <Footer/>
-            </div>
-
-
+            <Footer/>
         </div>
     );
 }

@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {ThemeProvider,Container, Box, Typography, Button, IconButton, Link, CardContent, Paper} from '@mui/material';
+import {ThemeProvider,Container, Box, Typography,  CardContent, Paper} from '@mui/material';
 
 import theme from "../theme";
 import ImgCarousel from "./Carousel";
@@ -8,8 +7,6 @@ import iconBeeLeft from '../assets/bee-left.svg';
 import iconTornadoLeft from '../assets/tornado-left.svg';
 import iconBeeRight from '../assets/bee-right.svg';
 import iconTornadoRight from '../assets/tornado-right.svg';
-
-const imageFront= require('../images/foto6.jpg');
 
 
 const About = () => {
@@ -22,43 +19,24 @@ const About = () => {
                        component={Paper}
                        sx={{
                            paddingTop:'16px'
-                           // backgroundColor:'transparent',
-                           // mt:{ xs: 1, md: 10, lg: '120px' },
-                           // display: 'flex',
-                           // justifyContent: 'space-between',
-                           // flexWrap: 'wrap'
-                           //    display: 'flex',
-                           // flexWrap:'wrap',
-                           // flexDirection: 'column'
-
                        }}>
 
                 <Box>
                     <CardContent sx={{position:'relative'}}>
-                        {/*<img src={imageFront} alt='pasieka' style={{*/}
-                        {/*    width: '100%',*/}
-                        {/*    margin: '0 auto',*/}
-                        {/*    borderRadius:'4px',*/}
-                        {/*    objectFit: 'contain'*/}
-                        {/*}}/>*/}
 
                         <img src={iconBeeLeft}
                              style={{
                                  height:'100px',
                                  position: 'absolute',
                                  top: '100px',
-                                 // left: { lg: '30px',xl:'80px'},
                                  left: '30px',
-                                 transform: 'rotate(-19deg)',
-                                 display: { xs: 'none', md:'none'},
-
+                                 transform: 'rotate(-19deg)'
                              }}/>
                         <img src={iconTornadoLeft}
                              style={{
                                  height:'60px',
                                  position: 'absolute',
                                  top: '185px',
-                                 // left: { lg: '9px',xl:'48px'},
                                  left: '9px',
                                  transform: 'rotate(230deg)'
                              }}/>
@@ -68,7 +46,6 @@ const About = () => {
                                  height:'100px',
                                  position: 'absolute',
                                  bottom: '225px',
-                                 // right: { lg: '45px',xl:'113px'},
                                  right:  '45px',
                                  transform: 'rotate(19deg)'
                              }}/>
@@ -85,8 +62,6 @@ const About = () => {
 
                         <Box maxWidth='md'
                             sx={{
-                                // display:'flex',
-                                // justifyContent:'center',
                                 margin: '0 auto',
                             }}>
                             <ImgCarousel />

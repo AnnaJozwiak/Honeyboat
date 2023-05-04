@@ -1,6 +1,7 @@
 import {Avatar,AppBar,Box,Toolbar, Typography , Container,ThemeProvider} from '@mui/material';
 import {NavLink} from "react-router-dom";
 import theme from "../theme";
+import imageTop from "../assets/wave4.svg";
 
 
 const logo = require('../assets/logo bez tla.png');
@@ -12,10 +13,12 @@ const AdminHeader =() => {
             <AppBar
                 position="static"
                 sx ={{
-                    // backgroundColor:'#F3D188',
-                    backgroundColor:'transparent',
+                    backgroundColor:{xs:'#F3D188', md:'transparent'},
                     boxShadow:0,
-
+                    backgroundImage: `url(${imageTop})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    height: { xs: '120px', md: '170px',lg: '200px', xl: '270px'},
                 }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -24,8 +27,9 @@ const AdminHeader =() => {
                             sx={{
                                 mr: 3,
                                 display: 'flex',
-                                height: { xs: '120px', md: '150px', xl: '170px'},
-                                ml:{ xs: 5, md: 17, xl:15 },
+                                height: { xs: '100px',lg: '150px', xl: '170px'},
+                                ml:{ xs: 5, md: 12, lg: 17,xl:15 },
+                                // mb:{ xs: 1, xl:3 },
                                 mt:{ xs: 2, xl:3 },
                             }}
                             component={NavLink}
@@ -44,7 +48,8 @@ const AdminHeader =() => {
                                 display: 'block' ,
                                 fontWeight: 700,
                                 fontSize: '20px',
-                                mb:{  xs:13,lg:8 },}}>
+                                // mb:{  xs:1,lg:8 },
+                            }}>
                                 PANEL ADMINISTRATORA
                             </Typography>
                             <Avatar sx={{ bgcolor: 'black',
@@ -56,8 +61,9 @@ const AdminHeader =() => {
                                 fontSize: 20,
                                 bottom:"10px",
                                 color: '#F3D188'
-
-                                 }}>AJ</Avatar>
+                                 }}>
+                                AJ
+                            </Avatar>
                         </Box>
                     </Toolbar>
                 </Container>

@@ -39,10 +39,11 @@ const Footer =()=> {
 
     return (
         <ThemeProvider theme={theme}>
-            <Container   maxWidth="xl"
-                         sx={{
-                             backgroundColor:'#F3D188'
-                         }}>
+            <Box  sx={{
+                backgroundColor:'#F3D188'
+            }}>
+
+            <Container   maxWidth="xl">
 
                 <Box sx={{
                     flexGrow: 1,
@@ -55,7 +56,7 @@ const Footer =()=> {
                         sx={{
                             mr: 3,
                             display: 'flex',
-                            height: { xs: '30px', sm: '40px', xl: '50px'},
+                            height: { xs: '40px', xl: '50px'},
                             ml:{ xs: 5, md: 17, xl:15 },
                             mt:{ xs: 2, xl:3 },
                         }}
@@ -95,9 +96,10 @@ const Footer =()=> {
                             mr: 3,
                             display: 'flex',
                             flexWrap:'wrap',
+                            justifyContent:'center',
                             gap: { xs: '30px', sm: '100px'},
                             ml:{ xs: 5, md: 17, xl:15 },
-                            mt:{ xs: 2, xl:3 },
+                            mt:{ xs: 3, xl:3 },
                             fontSize: 14
                         }}
                     >
@@ -105,7 +107,7 @@ const Footer =()=> {
                         <Box style={{
                             display:'flex',
                             flexDirection: 'column',
-                            alignItems: 'flex-start',
+                            alignItems: { xs: 'center', sm: 'flex-start' },
                             fontSize:13,
                             textDecoration: 'none',
                             textTransform:'none',
@@ -126,17 +128,15 @@ const Footer =()=> {
                         <Box style={{
                             display:'flex',
                             flexDirection: 'column',
-                            alignItems: 'flex-start',
+                            alignItems: { xs: 'center', sm: 'flex-start' },
                             fontSize:13,
                             textDecoration: 'none',
                             textTransform:'none'
                         }} >
-                            <Typography sx={{padding:'6px 8px 6px 0px', fontWeight:'500', fontSize:'14px'}}>Skontaktuj się z nami:</Typography>
+                            <Typography sx={{padding:'6px 8px 6px 0px', fontWeight:'500', fontSize:'14px', textAlign:'center'}}>Skontaktuj się z nami:</Typography>
                             <Button sx={{textTransform:'none'}} href ='mailto:honeyboat.pl@gmail.com' target="_blank" underline="none"><AlternateEmailIcon /> honeyboat.pl@gmail.com</Button>
                             <Button sx={{textTransform:'none'}} href ='tel:663150394' target="_blank"><PhoneIcon /> 663 150 394</Button>
                             <Button sx={{textTransform:'none'}} href ='https://wa.me/48663150394' target="_blank"><WhatsAppIcon /> Whats app</Button>
-
-
                         </Box>
                     </Typography>
 
@@ -150,14 +150,12 @@ const Footer =()=> {
                     <Typography sx={{
                         fontSize:13,
                         paddingTop:'30px'
-
                     }}>
                         Copyright © 2023 honeyboat.pl. All rights reserved.
                     </Typography>
                 </Box>
-
-
             </Container >
+            </Box>
         </ThemeProvider >
     )
 }

@@ -20,48 +20,45 @@ const Contact = () => {
                     flexWrap:'wrap',
                     flexGrow: 1,
                 }}>
-                <Box  component={Paper}
-                      style ={{
-                    margin: '0 60px 30px',
-                    padding:'35px',
-                    maxWidth: '450px'}}>
+                <Card sx ={{
+                    margin: {xs:'0px 0px 20px 0px' ,sm:'0 60px 30px'},
+                    maxWidth: '450px',
+                    padding:'20px 21px'
+                }}>
                     <CardContent sx={{
                             display:'flex',
-                            justifyContent: 'center'}}>
+                            justifyContent: 'center',
+                    }}>
                         <img src={imageFront}
                              alt='pasieka'
                              style={{
-                            // width: '100%',
                             maxHeight:'500px',
                             borderRadius:'4px',
                         }}/>
                     </CardContent>
 
-                </Box>
+                </Card>
 
-                <Card style={{
+                <Card sx={{
                     maxWidth: '450px',
-                    margin: '0 60px 30px',
-                    padding:'20px 5px'
+                    padding:'20px 5px',
+                    margin: {xs:'20px 0px 20px 0px' ,sm:'0 60px 30px'},
                 }}>
                     <CardContent>
 
                         <Typography variant='h3'
-                                    style={{
-                                        marginBottom: '10px',
-                                        fontSize:'20px',
+                                    sx={{
+                                        marginBottom: {xs:'25px' ,sm:'10px'},
+                                        fontSize:{xs:'15px' ,sm:'20px'},
                                         textAlign:'center',
-                                        position: 'relative'
+                                        position: 'relative',
                                     }}>
                             <img src={iconBeekeeper}
                                  style={{
                                      height:'60px',
-                                     paddingTop:0,
-                                     paddingRight:'30px',
                                      position: 'absolute',
                                      top: '-130%',
                                      left:'1%'
-
                                  }}/>
                                 Skontaktuj się z nami!
                         </Typography>

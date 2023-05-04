@@ -32,11 +32,11 @@ const AdminPulpit = ({onAdd, onCancel}) => {
         }}>
             <CssBaseline/>
             <div style={{
-                backgroundImage: `url(${imageTop})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                // height:'20hv',
-                backgroundPositionY:'-20px'
+                // backgroundImage: `url(${imageTop})`,
+                // backgroundRepeat: 'no-repeat',
+                // backgroundSize: 'cover',
+                // // height:'20hv',
+                // backgroundPositionY:'-20px'
             }}>
                 <AdminHeader/>
                 {!isDisplayAdd && <BasicTable onAdd={handleAdd}/>}

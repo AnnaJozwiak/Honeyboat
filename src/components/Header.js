@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from "../theme";
+import imageTop from "../assets/wave4.svg";
 
 const pages = [
     {
@@ -50,10 +51,12 @@ const Header =() => {
             <AppBar
                 position="static"
                 sx ={{
-                    // backgroundColor:'#F3D188',
-                    backgroundColor:'transparent',
+                    backgroundColor:{xs:'#F3D188', md:'transparent'},
                     boxShadow:0,
-
+                    backgroundImage: `url(${imageTop})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    height: { xs: '120px', md: '170px',lg: '200px', xl: '270px'},
                 }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -62,14 +65,11 @@ const Header =() => {
                             sx={{
                                 mr: 3,
                                 display: 'flex',
-                                // display: { xs: 'none', md: 'flex' },
-                                height: { xs: '120px', md: '100px',lg: '150px', xl: '170px'},
+                                height: { xs: '100px',lg: '150px', xl: '170px'},
                                 ml:{ xs: 5, md: 12, lg: 17,xl:15 },
                                 mt:{ xs: 2, xl:3 },
-                            }}
-                        >
+                            }}>
                             <img src={logo} alt='logo' />
-
                         </Typography>
 
                         <Box sx={{
@@ -85,10 +85,13 @@ const Header =() => {
                                 sx={{
                                     mb:6,
                                     mr: 3,
-                                    fontSize: '30px'
+                                    mt:'20px'
                                 }}
                             >
-                                <MenuIcon size="large"/>
+                                <MenuIcon sx={{
+                                    fontSize: '30px',
+                                    color: 'black'
+                                }}/>
                             </IconButton>
                             <Menu
                                 id="menu-appbar"

@@ -30,7 +30,7 @@ const ShopItemProduct = ({product}) => {
                         flexDirection:'column',
                         justifyContent:'space-between',
                         flexGrow: 1,
-                        minHeight:'540px'
+                        minHeight: '540px'
                     }} >
 
                         <Typography variant="body2"
@@ -40,8 +40,7 @@ const ShopItemProduct = ({product}) => {
                                         mt:{ xs: 2, xl:3 },
                                         fontSize: 16,
                                         fontWeight: 600,
-                                    }}
-                        >
+                                    }}>
                             {product.name}  {product.weight}g
 
                         </Typography>
@@ -57,11 +56,10 @@ const ShopItemProduct = ({product}) => {
                             display:'flex',
                             justifyContent:'center',
                             backgroundPositionY:'-22px'
-                        }}
-                        >
+                        }}>
                             <img src={require(`../../images/products/${product.img}`)} alt ={product.name}
                                  style={{
-                                     maxHeight:'200px'
+                                     maxHeight:  '210px'
                                  }}/>
 
 
@@ -75,9 +73,8 @@ const ShopItemProduct = ({product}) => {
                                         fontSize: 14,
                                         fontWeight: 400,
                                         minHeight:'120px'
-                                    }}
-                        >{product.description}
-
+                                    }}>
+                            {product.description}
                         </Typography>
 
                         <Box sx ={{justifyItems:'flex-end', alignSelf:'flex-end'}}>
@@ -90,8 +87,8 @@ const ShopItemProduct = ({product}) => {
                                             fontWeight: 600,
                                             textAlign:'right',
                                             marginRight:0
-                                        }}
-                            >Cena: {product.price}zł
+                                        }}>
+                                Cena: {product.price}zł
                             </Typography>
 
 
@@ -103,8 +100,8 @@ const ShopItemProduct = ({product}) => {
                                             <img src={iconMinus}
                                                  style={{
                                                      height:'25px',
-                                                 }}/></Button>
-
+                                                 }}/>
+                                        </Button>
                                         {productQuantity}
                                         <Button style={{
                                             paddingRight:0
@@ -114,7 +111,8 @@ const ShopItemProduct = ({product}) => {
                                             style={{
                                                 height:'25px',
                                                 paddingRight:0
-                                            }}/></Button>
+                                            }}/>
+                                        </Button>
                                     </Typography>
 
                                     <Button onClick={()=> cart.deleteFromCart(product.id)}>
@@ -123,19 +121,17 @@ const ShopItemProduct = ({product}) => {
                                           style={{
                                              height:'30px',
                                               paddingRight:'5px'
-                                             }}/></Button>
+                                             }}/>
+                                    </Button>
                                 </>
                                 :
                                 <Button variant='contained'
                                         color='secondary'
                                         onClick={()=>cart.addOneToCart(product.id)}
-                                >Dodaj do koszyka</Button>
-
-
+                                >Dodaj do koszyka
+                                </Button>
                             }
-
                         </Box>
-
                     </CardContent>
                 </Box>
             </Container >

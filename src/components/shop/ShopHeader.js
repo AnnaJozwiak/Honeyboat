@@ -1,13 +1,15 @@
 import {useState, useContext, useEffect} from 'react';
 import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider, Modal} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import {useNavigate,NavLink} from "react-router-dom";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {NavLink} from "react-router-dom";
 import theme from "../../theme";
 
 import {CartContext} from "./CartContext";
 import CartProduct from "./CartProduct";
 
 import iconHoney from "../../assets/honey-cart.svg";
+import imageTop from "../../assets/wave4.svg";
 
 
 const style = {
@@ -58,9 +60,12 @@ const ShopHeader =() => {
             <AppBar
                 position="static"
                 sx ={{
-                    // backgroundColor:'#F3D188',
-                    backgroundColor:'transparent',
+                    backgroundColor:{xs:'#F3D188', md:'transparent'},
                     boxShadow:0,
+                    backgroundImage: `url(${imageTop})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    height: { xs: '120px', md: '170px',lg: '200px', xl: '270px'},
                 }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -69,22 +74,33 @@ const ShopHeader =() => {
                             sx={{
                                 mr: 3,
                                 display: 'flex',
-                                // display: { xs: 'none', md: 'flex' },
-                                height: { xs: '120px', md: '100px',lg: '150px', xl: '170px'},
+                                height: { xs: '100px',lg: '150px', xl: '170px'},
                                 ml:{ xs: 5, md: 12, lg: 17,xl:15 },
                                 mt:{ xs: 2, xl:3 },
                             }}
                             component={NavLink}
-                            to={'/'}
-                        >
+                            to={'/'}>
                             <img src={logo} alt='logo' />
-
                         </Typography>
 
                         <Box sx={{
                             flexGrow: 1,
                             display: { xs: 'flex', md: 'none' },
-                            justifyContent:'flex-end'}}>
+                            justifyContent:'flex-end',
+                            marginTop:'20px'}}>
+
+                            <IconButton
+                                onClick={handleOpen}
+                                sx={{
+                                    mr: 3,
+                                    color: 'black'
+                                }}
+                            >
+                                <ShoppingCartIcon sx={{
+                                    fontSize: '30px'
+                                }}/>
+                                ({productCount})
+                            </IconButton>
                             <IconButton
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
@@ -92,13 +108,15 @@ const ShopHeader =() => {
                                 onClick={handleOpenNavMenu}
                                 color="black"
                                 sx={{
-                                    mb:6,
                                     mr: 3,
-                                    fontSize: '30px'
+                                    color: 'black'
                                 }}
                             >
-                                <MenuIcon size="large"/>
+                                <MenuIcon sx={{
+                                    fontSize: '30px'
+                                }}/>
                             </IconButton>
+
                             <Menu
                                 id="menu-appbar"
                                 anchorEl={anchorElNav}
@@ -121,7 +139,8 @@ const ShopHeader =() => {
                             >
                                 {pages.map((page) => (
                                     <MenuItem key={page.name}
-                                              href ={page.link}
+                                              component={NavLink}
+                                              to={page.link}
                                               onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center" sx={{
                                         }}>{page.name}</Typography>
@@ -143,7 +162,7 @@ const ShopHeader =() => {
                                     onClick={handleCloseNavMenu}
                                     sx={{ mb: 5,
                                         color: 'black',
-                                        display: 'block' ,
+                                        display:  'block',
                                         fontWeight: 700,
                                         fontSize: '16px',
                                         height:'100%'}}
@@ -155,55 +174,59 @@ const ShopHeader =() => {
                                 <Button onClick={handleOpen} sx={{
                                     fontWeight: 700,
                                     fontSize: '16px',
-                                    mb: 5}}>Koszyk ({productCount})</Button>
-                                <Modal
-                                    open={open}
-                                    onClose={handleClose}
-                                    aria-labelledby="modal-modal-title"
-                                    aria-describedby="modal-modal-description"
-                                >
-                                    <Box sx={style}>
-                                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                            {productCount > 0 ?
-                                                <>
-                                                    <p>
-                                                        <img src={iconHoney}
-                                                             style={{
-                                                                 height:'60px',
-                                                                 paddingTop:0
-                                                             }}/>
-                                                        Mój koszyk
-                                                    </p>
-                                                    {cart.items.map((currentProduct, index)=> (
-                                                        <CartProduct key={index}
-                                                                     id={currentProduct.id}
-                                                                     quantity={currentProduct.quantity}
-                                                                     sx={{
-                                                                         border: '1px solid #F3D188'
-                                                                     }}/>
-                                                    ))}
-                                                </>
-                                                :
-                                                <h3>Brak produktów w koszyku</h3>
-
-                                            }
-                                        </Typography>
-                                        <Typography id="modal-modal-title"
-                                                    variant="h6"
-                                                    component="h2"
-                                                    sx={{
-                                                        fontWeight: 700,
-                                                        fontSize: '20px'
-                                                    }}>
-                                            Do zapłaty: {cart.getTotalCost()}zł
-                                        </Typography>
-                                        <Button variant='contained'
-                                                color='secondary'>
-                                            Zamów
-                                        </Button>
-                                    </Box>
-                                </Modal>
+                                    mb: 5,
+                                }}>
+                                    Koszyk ({productCount})
+                                </Button>
                         </Box>
+
+                        <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                        >
+                            <Box sx={style}>
+                                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                    {productCount > 0 ?
+                                        <>
+                                            <Typography variant="h6">
+                                                <img src={iconHoney}
+                                                     style={{
+                                                         height:'60px',
+                                                         paddingTop:0
+                                                     }}/>
+                                                Mój koszyk
+                                            </Typography>
+                                            {cart.items.map((currentProduct, index)=> (
+                                                <CartProduct key={index}
+                                                             id={currentProduct.id}
+                                                             quantity={currentProduct.quantity}
+                                                             sx={{
+                                                                 border: '1px solid #F3D188'
+                                                             }}/>
+                                            ))}
+                                        </>
+                                        :
+                                        <h3>Brak produktów w koszyku</h3>
+
+                                    }
+                                </Typography>
+                                <Typography id="modal-modal-title"
+                                            variant="h6"
+                                            component="h2"
+                                            sx={{
+                                                fontWeight: 700,
+                                                fontSize: '20px'
+                                            }}>
+                                    Do zapłaty: {cart.getTotalCost()}zł
+                                </Typography>
+                                <Button variant='contained'
+                                        color='secondary'>
+                                    Zamów
+                                </Button>
+                            </Box>
+                        </Modal>
                     </Toolbar>
                 </Container>
             </AppBar>
