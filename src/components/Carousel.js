@@ -36,12 +36,12 @@ const styleDot = {
 }
 const styleImg = {
     width: '100%',
-    height:'100p%'
+    height:'100p%',
 }
 const styleWraper = {
     width:'160px',
     height: '160px',
-    marginBottom: '10px'
+    marginBottom: '10px',
 }
 
 const ImgCarousel = () =>{
@@ -54,6 +54,8 @@ const ImgCarousel = () =>{
                 swipeable={true}
                 emulateTouch={true}
                 autoPlay={true}
+                infiniteLoop={true}
+                stopOnHover={true}
             >
                 {/*{slides.map((slide) => {*/}
                 {/*    <div>*/}

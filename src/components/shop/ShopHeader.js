@@ -7,6 +7,9 @@ import theme from "../../theme";
 import {CartContext} from "./CartContext";
 import CartProduct from "./CartProduct";
 
+import iconHoney from "../../assets/honey-cart.svg";
+
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -160,21 +163,44 @@ const ShopHeader =() => {
                                     aria-describedby="modal-modal-description"
                                 >
                                     <Box sx={style}>
-                                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                                            Do zapłaty: {cart.getTotalCost()}zł
-                                        </Typography>
                                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                                             {productCount > 0 ?
                                                 <>
-                                                    <p>Produkty w koszyku: </p>
+                                                    <p>
+                                                        <img src={iconHoney}
+                                                             style={{
+                                                                 height:'60px',
+                                                                 paddingTop:0
+                                                             }}/>
+                                                        Mój koszyk
+                                                    </p>
                                                     {cart.items.map((currentProduct, index)=> (
-                                                        <CartProduct key={index} id={currentProduct.id} quantity={currentProduct.quantity} />
+                                                        <CartProduct key={index}
+                                                                     id={currentProduct.id}
+                                                                     quantity={currentProduct.quantity}
+                                                                     sx={{
+                                                                         border: '1px solid #F3D188'
+                                                                     }}/>
                                                     ))}
                                                 </>
                                                 :
                                                 <h3>Brak produktów w koszyku</h3>
+
                                             }
                                         </Typography>
+                                        <Typography id="modal-modal-title"
+                                                    variant="h6"
+                                                    component="h2"
+                                                    sx={{
+                                                        fontWeight: 700,
+                                                        fontSize: '20px'
+                                                    }}>
+                                            Do zapłaty: {cart.getTotalCost()}zł
+                                        </Typography>
+                                        <Button variant='contained'
+                                                color='secondary'>
+                                            Zamów
+                                        </Button>
                                     </Box>
                                 </Modal>
                         </Box>

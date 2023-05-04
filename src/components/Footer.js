@@ -66,25 +66,27 @@ const Footer =()=> {
                             target='_blank'
                             sx={{
                                 mb:3,
-                                fontSize: '40px',
-                                // color:'black',
                                 mt:'12px',
                                 ml: '20px'
                             }}
                         >
-                            <InstagramIcon />
+                            <InstagramIcon sx={{
+                                fontSize: '40px',
+                                color:'black',
+                            }}/>
                         </IconButton>
                         <IconButton
                             href='https://www.facebook.com/profile.php?id=100083395718000'
                             target='_blank'
                             sx={{
                                 mb:3,
-                                fontSize: '40px',
-                                // color:'black',
                                 mt:'12px'
                             }}
                         >
-                            <FacebookIcon />
+                            <FacebookIcon sx={{
+                                fontSize: '40px',
+                                color:'black',
+                            }}/>
                         </IconButton>
                     </Typography>
 

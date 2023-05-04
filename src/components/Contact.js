@@ -4,6 +4,8 @@ import {ThemeProvider, Container, Box, Typography, Button, IconButton, Link, Car
 import theme from "../theme";
 import imageFront from "../images/foto7.jpg";
 
+import iconBeekeeper from "../assets/beekeeper.svg";
+
 
 const Contact = () => {
 
@@ -11,20 +13,24 @@ const Contact = () => {
     return (
             <ThemeProvider theme={theme}>
                 <Container id ='contact'
-                     maxWidth='xl' sx={{
+                            maxWidth='xl'
+                           sx={{
                     display:'flex',
-                    justifyContent: 'space-between',
+                    justifyContent: 'space-around',
                     flexWrap:'wrap',
                     flexGrow: 1,
                 }}>
-                <Box  component={Paper}  style ={{
+                <Box  component={Paper}
+                      style ={{
                     margin: '0 60px 30px',
                     padding:'35px',
                     maxWidth: '450px'}}>
                     <CardContent sx={{
                             display:'flex',
                             justifyContent: 'center'}}>
-                        <img src={imageFront} alt='pasieka' style={{
+                        <img src={imageFront}
+                             alt='pasieka'
+                             style={{
                             // width: '100%',
                             maxHeight:'500px',
                             borderRadius:'4px',
@@ -39,12 +45,25 @@ const Contact = () => {
                     padding:'20px 5px'
                 }}>
                     <CardContent>
+
                         <Typography variant='h3'
                                     style={{
                                         marginBottom: '10px',
-                                        fontSize:'20px'
+                                        fontSize:'20px',
+                                        textAlign:'center',
+                                        position: 'relative'
                                     }}>
-                            Skontaktuj się z nami!
+                            <img src={iconBeekeeper}
+                                 style={{
+                                     height:'60px',
+                                     paddingTop:0,
+                                     paddingRight:'30px',
+                                     position: 'absolute',
+                                     top: '-130%',
+                                     left:'1%'
+
+                                 }}/>
+                                Skontaktuj się z nami!
                         </Typography>
                         <form>
                             <Grid container spacing={1}>
