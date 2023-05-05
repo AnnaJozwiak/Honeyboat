@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter basename='/Honeyboat'>
       {/*<BrowserRouter basename='/React'>*/}
         <Routes>
-          <Route exact path='/Honeyboat' element={<Main />}/>
+          <Route exact path='/' element={<Main />}/>
           <Route path='/admin' element={<AdminPulpit/>}/>
           <Route path='/admin/:id' element={<Update/>} />
           <Route path='/login' element={<Login/>}/>
