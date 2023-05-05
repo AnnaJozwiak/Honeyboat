@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Route, Routes, Link, BrowserRouter} from 'react-router-dom';
+import { Route, Routes, Link, BrowserRouter,HashRouter} from 'react-router-dom';
 
 import Main from "./components/Main";
 import AdminPulpit from "./admin/AdminPulpit";
@@ -13,7 +13,7 @@ function App() {
   return (
       <CartProvider>
       <div>
-      <BrowserRouter basename='/Honeyboat'>
+      <HashRouter basename='/Honeyboat'>
       {/*<BrowserRouter basename='/React'>*/}
         <Routes>
           <Route exact path='/' element={<Main />}/>
@@ -22,7 +22,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/shop' element={<ShopPulpit/>}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       </div>
       </CartProvider>
   )
