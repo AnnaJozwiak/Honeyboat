@@ -17,10 +17,10 @@ function App() {
       <BrowserRouter basename='/React'>
         <Routes>
           <Route exact path='/' element={<Main />}/>
-          <Route path='/admin' element={<AdminPulpit/>}/>
+          <Route path='/React/admin' element={<AdminPulpit/>}/>
           <Route path='/admin/:id' element={<Update/>} />
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/shop' element={<ShopPulpit/>}/>
+          <Route path='/React/login' element={<Login/>}/>
+          <Route path='/React/shop' element={<ShopPulpit/>}/>
         </Routes>
       </BrowserRouter>
       </div>
