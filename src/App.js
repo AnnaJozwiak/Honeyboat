@@ -20,7 +20,7 @@ function App() {
           <Route path='/admin' element={<AdminPulpit/>}/>
           <Route path='/admin/:id' element={<Update/>} />
           <Route path='/login' element={<Login/>}/>
-          <Route path='/shop' element={<ShopPulpit/>}/>
+          <Route path='/shop' component={<ShopPulpit/>}/>
         </Routes>
       </BrowserRouter>
       </div>
