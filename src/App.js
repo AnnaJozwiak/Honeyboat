@@ -13,7 +13,8 @@ function App() {
   return (
       <CartProvider>
       <div>
-      <BrowserRouter basename='/Honeyboat'>
+      {/*<BrowserRouter basename='/Honeyboat'>*/}
+      <BrowserRouter basename='/React'>
         <Routes>
           <Route exact path='/' element={<Main />}/>
           <Route path='/admin' element={<AdminPulpit/>}/>
