@@ -13,7 +13,7 @@ function App() {
   return (
       <CartProvider>
       <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/index.html">
         <Routes>
           <Route exact path='/' element={<Main />}/>
           <Route path='/admin' element={<AdminPulpit/>}/>
