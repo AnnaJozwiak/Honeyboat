@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/honeyboat/static/css/main.8eb20739.css",
+    "main.js": "/honeyboat/static/js/main.966111a8.js",
+    "static/media/foto12.jpg": "/honeyboat/static/media/foto12.963ad26eb4056aca6241.jpg",
+    "static/media/foto4.jpg": "/honeyboat/static/media/foto4.3a7319130dde84eda75e.jpg",
+    "static/media/foto6.jpg": "/honeyboat/static/media/foto6.b008a1e462cdadce13ee.jpg",
+    "static/media/foto7.jpg": "/honeyboat/static/media/foto7.4d50466b24b5e4f168d4.jpg",
+    "static/media/Akacjowy2.png": "/honeyboat/static/media/Akacjowy2.b719aaa9a5b2e72dc4c9.png",
+    "static/media/Rzepakowy.png": "/honeyboat/static/media/Rzepakowy.ddb55ba3e625df267083.png",
+    "static/media/Lipowy.png": "/honeyboat/static/media/Lipowy.4bf99e4eaa2ce1fd1bfb.png",
+    "static/media/Akacjowy.png": "/honeyboat/static/media/Akacjowy.413fdb18128aaf354f85.png",
+    "static/media/tlo4.png": "/honeyboat/static/media/tlo4.c5d92d03f010ebd34447.png",
+    "static/media/logo bez tla.png": "/honeyboat/static/media/logo bez tla.7931b08ffcafa68b9034.png",
+    "static/media/Gryczany.png": "/honeyboat/static/media/Gryczany.4fe4cf69efc2b97727ba.png",
+    "static/media/Font.png": "/honeyboat/static/media/Font.3bc9fd3b3f3ac96e10ee.png",
+    "static/media/honey-cart.svg": "/honeyboat/static/media/honey-cart.3ca04207ef0ada0f9b17a65db7471d43.svg",
+    "static/media/beekeeper.svg": "/honeyboat/static/media/beekeeper.455dafc7e5b687ffa96fee4cdea6ed33.svg",
+    "static/media/delete.svg": "/honeyboat/static/media/delete.7eac1d508434a47496473505696767cc.svg",
+    "static/media/bee-right.svg": "/honeyboat/static/media/bee-right.ef9f31b5a878cbaaed8ce96060d64cc8.svg",
+    "static/media/bee-left.svg": "/honeyboat/static/media/bee-left.be09dda8059b82b57972b8c2fb3699e0.svg",
+    "index.html": "/honeyboat/index.html",
+    "static/media/add-hexagon.svg": "/honeyboat/static/media/add-hexagon.ea2505d22b93fcf3bf6b53786b994bbe.svg",
+    "static/media/minus-hexagon.svg": "/honeyboat/static/media/minus-hexagon.321d4d7c17939291463296cbd251ac3c.svg",
+    "static/media/tornado-right.svg": "/honeyboat/static/media/tornado-right.417860e9ccbf3d5544c4911b87c31067.svg",
+    "static/media/wave4.svg": "/honeyboat/static/media/wave4.7a79fa38df8cbf832eb51431f7b5e469.svg",
+    "static/media/tornado-left.svg": "/honeyboat/static/media/tornado-left.6d030b828b02694e6216e1690adb8881.svg",
+    "static/media/blob2.svg": "/honeyboat/static/media/blob2.aefc5469a437d14029eab5c974c66496.svg",
+    "main.8eb20739.css.map": "/honeyboat/static/css/main.8eb20739.css.map",
+    "main.966111a8.js.map": "/honeyboat/static/js/main.966111a8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8eb20739.css",
+    "static/js/main.966111a8.js"
+  ]
+}
