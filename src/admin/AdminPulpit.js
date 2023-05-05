@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import imageBack from "../assets/tlo4.png";
 import {CssBaseline} from "@mui/material";
 import imageTop from "../assets/wave4.svg";
-import { Route, Routes, Link, BrowserRouter} from 'react-router-dom';
+
 
 import AdminHeader from "./AdminHeader";
 import AddProduct from "./AddProduct";
@@ -19,9 +19,6 @@ const AdminPulpit = ({onAdd, onCancel}) => {
     const handleCancel = () => {
         setIsDisplayAdd(false)
     }
-    const handleSave = () => {
-        setIsDisplayAdd(false)
-    }
 
     return (
         <div style={{
@@ -31,17 +28,9 @@ const AdminPulpit = ({onAdd, onCancel}) => {
             height:'100vh'
         }}>
             <CssBaseline/>
-            <div style={{
-                // backgroundImage: `url(${imageTop})`,
-                // backgroundRepeat: 'no-repeat',
-                // backgroundSize: 'cover',
-                // // height:'20hv',
-                // backgroundPositionY:'-20px'
-            }}>
-                <AdminHeader/>
-                {!isDisplayAdd && <BasicTable onAdd={handleAdd}/>}
-                {isDisplayAdd && <AddProduct onCancel = {handleCancel}/>}
-            </div>
+            <AdminHeader/>
+            {!isDisplayAdd && <BasicTable onAdd={handleAdd}/>}
+            {isDisplayAdd && <AddProduct onCancel = {handleCancel}/>}
 
         </div>
     )

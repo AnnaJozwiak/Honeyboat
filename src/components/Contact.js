@@ -87,7 +87,7 @@ const Contact = () => {
                                  style={{
                                      height:'60px',
                                      position: 'absolute',
-                                     top: '-130%',
+                                     top: '-125%',
                                      left:'1%'
                                  }}/>
                                 Skontaktuj się z nami!

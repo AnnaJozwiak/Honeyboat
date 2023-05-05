@@ -1,15 +1,49 @@
 import React, {useEffect, useState} from 'react';
 import imageBack from "../assets/tlo4.png";
 import {Button, Card, CardContent, CssBaseline, Grid, TextField, ThemeProvider, Typography} from "@mui/material";
-import imageTop from "../assets/wave4.svg";
-import { Route, Routes, Link, BrowserRouter} from 'react-router-dom';
+
 import theme from "../theme";
 
-import supabase from "./SupabaseClient";
-
+import FakeAPI from './fakeAPI';
+import AdminPulpit from "./AdminPulpit";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState([]);
+    const [userData, setUserData] = useState();
 
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const validationErros = [];
+        if(username.length < 3) {
+            validationErros.push("Login musi być dłuższy niż 2 znaki");
+        }
+        if(password.length < 5) {
+            validationErros.push("Hasło musi być dłuższe niż 4 znaki");
+        }
+
+        if (validationErros.length === 0) {
+            setErrors([]);
+            FakeAPI.login({ username, password }).then(user => {
+                setUserData(user);
+                console.log(user);
+            }).catch(err => {
+                setErrors([err]);
+            })
+        } else {
+            setErrors(validationErros);
+        }
+    }
+    if (userData) {
+        // return (
+        //     <AdminPulpit/>
+        // )
+        navigate('/admin');
+    }
 
     return (
         <div style={{
@@ -28,10 +62,10 @@ const Login = () => {
                     margin: '200px auto',
                 }}>
                     <CardContent>
-                        <Typography variant='h3'>
+                        <Typography variant='h5'>
                             LOGOWANIE
                         </Typography>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <Grid container spacing={1}>
                                 <Grid xs={12}  item>
                                     <TextField
@@ -40,7 +74,11 @@ const Login = () => {
                                         variant='outlined'
                                         fullWidth
                                         required
-                                        color='secondary'/>
+                                        color='secondary'
+                                        type="text"
+                                        name="username"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}/>
 
                                 </Grid>
                                 <Grid xs={12}  item>
@@ -50,8 +88,12 @@ const Login = () => {
                                         variant='outlined'
                                         fullWidth
                                         required
-                                        type='password'
-                                        color='secondary'/>
+                                        color='secondary'
+                                        type="password"
+                                        name="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
 
                                 </Grid>
 
@@ -62,6 +104,16 @@ const Login = () => {
                                             color='secondary'>Zaloguj się</Button>
                                 </Grid>
                             </Grid>
+                            <Typography>
+                                <ul>
+                                    {errors.map((error, index) => {
+                                        return <li key={index}>{error}</li>
+                                    })}
+                                </ul>
+                            </Typography>
+
+
+
                         </form>
                     </CardContent>
                 </Card>
