@@ -3,6 +3,7 @@ import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuIt
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from "../theme";
 import imageTop from "../assets/wave4.svg";
+import {NavLink} from "react-router-dom";
 
 const pages = [
     {
@@ -131,22 +132,90 @@ const Header =() => {
                                 flexGrow: 1,
                                 display: { xs: 'none', md: 'flex' },
                                 justifyContent:'flex-end' }}>
-                            {pages.map((page) => (
-                            <Button
-                                    href={page.link}
-                                    key={page.name}
+                            {/*{pages.map((page) => (*/}
+                            {/*<Button*/}
+                            {/*        // href={page.link}*/}
+                            {/*        key={page.name}*/}
+                            {/*        component={NavLink}*/}
+                            {/*        to={`/${page.link}`}*/}
+                            {/*        onClick={handleCloseNavMenu}*/}
+                            {/*        sx={{ mb: 5,*/}
+                            {/*            color: 'black',*/}
+                            {/*            display: 'block' ,*/}
+                            {/*            fontWeight: 700,*/}
+                            {/*            fontSize: '16px',*/}
+                            {/*            height:'100%'}}*/}
+                            {/*    >*/}
+                            {/*        {page.name}*/}
+                            {/*    </Button>*/}
+                            {/*))}*/}
 
-                                    onClick={handleCloseNavMenu}
-                                    sx={{ mb: 5,
-                                        color: 'black',
-                                        display: 'block' ,
-                                        fontWeight: 700,
-                                        fontSize: '16px',
-                                        height:'100%'}}
-                                >
-                                    {page.name}
-                                </Button>
-                            ))}
+                            <Button
+                                href='#about'
+                                onClick={handleCloseNavMenu}
+                                sx={{ mb: 5,
+                                    color: 'black',
+                                    display: 'block' ,
+                                    fontWeight: 700,
+                                    fontSize: '16px',
+                                    height:'100%'}}
+                            >
+                                O pasiece
+                            </Button>
+
+                            <Button
+                                href='#colaboration'
+                                onClick={handleCloseNavMenu}
+                                sx={{ mb: 5,
+                                    color: 'black',
+                                    display: 'block' ,
+                                    fontWeight: 700,
+                                    fontSize: '16px',
+                                    height:'100%'}}
+                            >
+                                Współpraca
+                            </Button>
+
+                            <Button
+                                component={NavLink}
+                                to={`/shop`}
+                                onClick={handleCloseNavMenu}
+                                sx={{ mb: 5,
+                                    color: 'black',
+                                    display: 'block' ,
+                                    fontWeight: 700,
+                                    fontSize: '16px',
+                                    height:'100%'}}
+                            >
+                                Sklep
+                            </Button>
+
+                            <Button
+                                href='#contact'
+                                onClick={handleCloseNavMenu}
+                                sx={{ mb: 5,
+                                    color: 'black',
+                                    display: 'block' ,
+                                    fontWeight: 700,
+                                    fontSize: '16px',
+                                    height:'100%'}}
+                            >
+                                Kontakt
+                            </Button>
+
+                            <Button
+                                component={NavLink}
+                                to={`/login`}
+                                onClick={handleCloseNavMenu}
+                                sx={{ mb: 5,
+                                    color: 'black',
+                                    display: 'block' ,
+                                    fontWeight: 700,
+                                    fontSize: '16px',
+                                    height:'100%'}}
+                            >
+                                Zaloguj
+                            </Button>
                         </Box>
                     </Toolbar>
                 </Container>

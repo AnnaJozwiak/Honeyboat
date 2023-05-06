@@ -16,11 +16,11 @@ function App() {
       <Router basename='/Honeyboat'>
       {/*<BrowserRouter basename='/React'>*/}
         <Routes>
-          <Route exact path={'/'} element={<Main />}/>
-          <Route path={'/admin'} element={<AdminPulpit/>}/>
-          <Route path={'/admin/:id'} element={<Update/>} />
-          <Route path={'/login'} element={<Login/>}/>
-          <Route path={'/shop'} element={<ShopPulpit/>}/>
+          <Route exact path='/' element={<Main />}/>
+          <Route path='/admin' element={<AdminPulpit/>}/>
+          <Route path='/admin/:id' element={<Update/>} />
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/shop' element={<ShopPulpit/>}/>
         </Routes>
       </Router>
       </div>
