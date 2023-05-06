@@ -62,7 +62,7 @@ const Login = () => {
                     margin: '200px auto',
                 }}>
                     <CardContent>
-                        <Typography variant='h5'>
+                        <Typography variant='h6'>
                             LOGOWANIE
                         </Typography>
                         <form onSubmit={handleSubmit}>
