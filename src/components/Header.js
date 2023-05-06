@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, createRef} from 'react';
 import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuItem,ThemeProvider} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from "../theme";
@@ -37,6 +37,7 @@ const logo = require('../assets/logo bez tla.png');
 
 const Header =() => {
     const [anchorElNav, setAnchorElNav] = useState(null);
+    const about = createRef();
 
 
     const handleOpenNavMenu = (event) => {
@@ -125,7 +126,7 @@ const Header =() => {
                                 {/*))}*/}
 
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <a href='#about'
+                                    <a href='/#about/'
                                        style={{
                                         textDecoration:'none',
                                         color: 'black'
@@ -136,7 +137,7 @@ const Header =() => {
                                 </MenuItem>
 
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <a href='#colaboration'
+                                    <a href='/#colaboration/'
                                        style={{
                                         textDecoration:'none',
                                         color: 'black'
@@ -153,7 +154,7 @@ const Header =() => {
                                 </MenuItem>
 
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <a href='#contact'
+                                    <a href='/#contact/'
                                        style={{
                                         textDecoration:'none',
                                         color: 'black'
@@ -237,7 +238,7 @@ const Header =() => {
                             </Button>
 
                             <Button
-                                href='#contact'
+                                href='/#contact/'
                                 onClick={handleCloseNavMenu}
                                 sx={{ mb: 5,
                                     color: 'black',

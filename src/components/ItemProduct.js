@@ -1,6 +1,7 @@
 import {ThemeProvider,Container, Box, Typography, CardContent, Paper} from '@mui/material';
 import theme from "../theme";
 import blob from '../assets/blob2.svg'
+import {NavLink} from "react-router-dom";
 
 const ItemProduct = ({product}) => {
 
@@ -34,8 +35,8 @@ const ItemProduct = ({product}) => {
                             {product.name}  {product.weight}g
                         </Typography>
 
-                        <Typography   component='a'
-                                        href='/shop'
+                        <Typography   component={NavLink}
+                                      to={`/shop`}
                                          sx={{
                                          mr: 3,
                                          mt:{ xs: 2, xl:3 },
