@@ -156,8 +156,8 @@ const ShopHeader =() => {
                                 justifyContent:'flex-end' }}>
                             {pages.map((page) => (
                                 <Button
-                                    component = 'a'
-                                    href ={page.link}
+                                    component ={NavLink}
+                                    to={page.link}
                                     key={page.name}
                                     onClick={handleCloseNavMenu}
                                     sx={{ mb: 5,

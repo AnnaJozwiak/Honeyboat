@@ -8,6 +8,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 
 import theme from "../theme";
+import {NavLink} from "react-router-dom";
 
 const pagesCol1 = [
     {
@@ -113,15 +114,40 @@ const Footer =()=> {
                             textTransform:'none',
 
                         }}>
-                            {pagesCol1.map((page) => (
-                                   <Button
-                                    sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
-                                    href={page.link}
-                                    key={page.name}
-                                >
-                                    {page.name}
-                                </Button>
-                            ))}
+                            {/*{pagesCol1.map((page) => (*/}
+                            {/*       <Button*/}
+                            {/*        sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}*/}
+                            {/*        href={page.link}*/}
+                            {/*        key={page.name}*/}
+                            {/*    >*/}
+                            {/*        {page.name}*/}
+                            {/*    </Button>*/}
+                            {/*))}*/}
+                            <Button
+                                sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
+                                href='#about'
+                            >
+                               O pasiece
+                            </Button>
+                            <Button
+                                sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
+                                href='#colaboration'
+                            >
+                                Współpraca
+                            </Button>
+                            <Button
+                                sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
+                                component={NavLink}
+                                to={`/shop`}
+                            >
+                                Sklep
+                            </Button>
+                            <Button
+                                sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
+                                href='#contact'
+                            >
+                                Kontakt
+                            </Button>
                         </Box>
 
 

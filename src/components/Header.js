@@ -20,7 +20,7 @@ const pages = [
     },
     {
     name:'Sklep',
-    link:'/shop'
+    link:'/shop/'
     },
     {
         name:'Kontakt',
@@ -28,7 +28,7 @@ const pages = [
     },
     {
         name:'Zaloguj',
-        link:'/login'
+        link:'/login/'
     }
 ];
 
@@ -114,15 +114,61 @@ const Header =() => {
                                     mb:3
                                 }}
                             >
-                                {pages.map((page) => (
-                                    <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                                        <a href={page.link} style={{
-                                            textDecoration:'none',
-                                            color: 'black'
-                                        }}><Typography textAlign="center" sx={{
-                                        }}>{page.name}</Typography></a>
-                                    </MenuItem>
-                                ))}
+                                {/*{pages.map((page) => (*/}
+                                {/*    <MenuItem key={page.name} onClick={handleCloseNavMenu}>*/}
+                                {/*        <a href={page.link} style={{*/}
+                                {/*            textDecoration:'none',*/}
+                                {/*            color: 'black'*/}
+                                {/*        }}><Typography textAlign="center" sx={{*/}
+                                {/*        }}>{page.name}</Typography></a>*/}
+                                {/*    </MenuItem>*/}
+                                {/*))}*/}
+
+                                <MenuItem  onClick={handleCloseNavMenu}>
+                                    <a href='#about'
+                                       style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}><Typography textAlign="center"
+                                       >
+                                        O pasiece
+                                    </Typography></a>
+                                </MenuItem>
+
+                                <MenuItem  onClick={handleCloseNavMenu}>
+                                    <a href='#colaboration'
+                                       style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}><Typography textAlign="center" sx={{
+                                    }}>Współpraca</Typography></a>
+                                </MenuItem>
+
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center"
+                                                   component={NavLink}
+                                                   to={`/shop`}
+                                                   sx={{textDecoration:'none', color: 'black'
+                                    }}>Sklep</Typography>
+                                </MenuItem>
+
+                                <MenuItem  onClick={handleCloseNavMenu}>
+                                    <a href='#contact'
+                                       style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
+                                    <Typography textAlign="center" sx={{
+                                    }}> Kontakt</Typography></a>
+                                </MenuItem>
+
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center"
+                                                component={NavLink}
+                                                to={`/login`}
+                                                sx={{textDecoration:'none',color: 'black'
+                                    }}>Zaloguj</Typography>
+                                </MenuItem>
                             </Menu>
                         </Box>
 
