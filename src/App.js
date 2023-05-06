@@ -13,8 +13,9 @@ function App() {
   return (
       <CartProvider>
       <div>
-      <Router basename='/Honeyboat'>
-      {/*<BrowserRouter basename='/React'>*/}
+      <HashRouter>
+      {/*    <Router basename='/Honeyboat'>*/}
+      {/*/!*<BrowserRouter basename='/React'>*!/*/}
         <Routes>
           <Route exact path='/' element={<Main />}/>
           <Route path='/admin' element={<AdminPulpit/>}/>
@@ -22,7 +23,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/shop' element={<ShopPulpit/>}/>
         </Routes>
-      </Router>
+      </HashRouter>
       </div>
       </CartProvider>
   )
