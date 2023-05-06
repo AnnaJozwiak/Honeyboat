@@ -5,6 +5,7 @@ import imageBack from '../../assets/tlo4.png';
 import ShopHeader from "./ShopHeader";
 import Footer from "../Footer";
 import ShopAllProducts from "./ShopAllProducts";
+import ShopFooter from "./ShopFooter";
 
 
 const ShopPulpit = () => {
@@ -19,7 +20,7 @@ const ShopPulpit = () => {
             <CssBaseline/>
             <ShopHeader/>
             <ShopAllProducts/>
-            <Footer/>
+            <ShopFooter/>
 
         </div>
     );
