@@ -159,7 +159,7 @@ const Header =() => {
                                     {/*    textDecoration:'none',*/}
                                     {/*    color: 'black'*/}
                                     {/*}}>*/}
-                                    <HashLink smooth to ='/#contact'>
+                                    <HashLink smooth to ='#contact'>
                                     <Typography textAlign="center"
                                                 // component={Link}
                                                 // to={`#contact`}
