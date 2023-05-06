@@ -206,25 +206,27 @@ const ShopHeader =() => {
                                                                  border: '1px solid #F3D188'
                                                              }}/>
                                             ))}
+
+                                            <Typography id="modal-modal-title"
+                                                        variant="h6"
+                                                        component="h2"
+                                                        sx={{
+                                                            fontWeight: 700,
+                                                            fontSize: '20px'
+                                                        }}>
+                                                Do zapłaty: {cart.getTotalCost()}zł
+                                            </Typography>
+                                            <Button variant='contained'
+                                                    color='secondary'>
+                                                Zamów
+                                            </Button>
                                         </>
                                         :
                                         <h3>Brak produktów w koszyku</h3>
 
                                     }
                                 </Typography>
-                                <Typography id="modal-modal-title"
-                                            variant="h6"
-                                            component="h2"
-                                            sx={{
-                                                fontWeight: 700,
-                                                fontSize: '20px'
-                                            }}>
-                                    Do zapłaty: {cart.getTotalCost()}zł
-                                </Typography>
-                                <Button variant='contained'
-                                        color='secondary'>
-                                    Zamów
-                                </Button>
+
                             </Box>
                         </Modal>
                     </Toolbar>
