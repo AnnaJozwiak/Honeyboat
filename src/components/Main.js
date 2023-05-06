@@ -9,8 +9,20 @@ import Colaboration from "./Colaboration";
 import Products from "./Products";
 
 import imageBack from '../assets/tlo4.png';
+import {createRef} from "react";
 
 const Main = () => {
+    // const about = createRef();
+    //
+    // const handleScrollAbout = (e) => {
+    //     e.preventDefault();
+    //     const about = about.current;
+    //     window.scrollTo({
+    //         top: about.offsetTop,
+    //         left: 0,
+    //         behavior: "instant"
+    //     });
+    // };
 
     return (
         <div style={{
@@ -19,9 +31,9 @@ const Main = () => {
             backgroundSize: 'contain',
         }}>
             <CssBaseline/>
-           <Header/>
+           <Header />
             <Banner/>
-            <About/>
+            <About />
             <Products/>
             <Colaboration/>
             <Contact/>

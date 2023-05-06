@@ -3,7 +3,8 @@ import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuIt
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from "../theme";
 import imageTop from "../assets/wave4.svg";
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
+import {HashLink} from "react-router-hash-link";
 
 const pages = [
     {
@@ -37,7 +38,6 @@ const logo = require('../assets/logo bez tla.png');
 
 const Header =() => {
     const [anchorElNav, setAnchorElNav] = useState(null);
-    const about = createRef();
 
 
     const handleOpenNavMenu = (event) => {
@@ -154,13 +154,19 @@ const Header =() => {
                                 </MenuItem>
 
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <a href='/#contact/'
-                                       style={{
-                                        textDecoration:'none',
-                                        color: 'black'
-                                    }}>
-                                    <Typography textAlign="center" sx={{
-                                    }}> Kontakt</Typography></a>
+                                    {/*<a href='/#contact/'*/}
+                                    {/*   style={{*/}
+                                    {/*    textDecoration:'none',*/}
+                                    {/*    color: 'black'*/}
+                                    {/*}}>*/}
+                                    <HashLink smooth to ='/#contact'>
+                                    <Typography textAlign="center"
+                                                // component={Link}
+                                                // to={`#contact`}
+                                                sx={{
+                                    }}> Kontakt</Typography>
+                                {/*</a>*/}
+                                </HashLink>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
@@ -198,8 +204,9 @@ const Header =() => {
                             {/*))}*/}
 
                             <Button
-                                href='#about'
+                                // href='#about'
                                 onClick={handleCloseNavMenu}
+                                // onClick={handleScrollAbout}
                                 sx={{ mb: 5,
                                     color: 'black',
                                     display: 'block' ,
