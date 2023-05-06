@@ -54,7 +54,7 @@ const Header =() => {
                 sx ={{
                     backgroundColor:{xs:'#F3D188', md:'transparent'},
                     boxShadow:0,
-                    backgroundImage: `url(${imageTop})`,
+                    backgroundImage: {xs:'none', md:`url(${imageTop})`},
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     height: { xs: '120px', md: '170px',lg: '200px', xl: '270px'},
