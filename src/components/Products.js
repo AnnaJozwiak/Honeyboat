@@ -5,6 +5,7 @@ import theme from "../theme";
 
 import ItemProduct from "./ItemProduct";
 import {CartContext} from "./shop/CartContext";
+import {NavLink} from "react-router-dom";
 
 
 const Products = () => {
@@ -46,7 +47,8 @@ const Products = () => {
                 </Box>
                 <Button variant='contained'
                         color='secondary'
-                        href='/shop'
+                        component={NavLink}
+                        to={`/shop`}
                         // fullWidth
                         sx ={{marginTop:'20px',
                             width:'100%'
