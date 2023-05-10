@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Route, Routes, Link, BrowserRouter as Router,HashRouter} from 'react-router-dom';
+import React from 'react';
+import { Route, Routes, BrowserRouter,HashRouter} from 'react-router-dom';
 
 import Main from "./components/Main";
 import AdminPulpit from "./admin/AdminPulpit";
@@ -14,7 +14,7 @@ function App() {
       <CartProvider>
       <div>
       <HashRouter>
-      {/*    <Router basename='/Honeyboat'>*/}
+      {/*    <BrowserRouter basename='/Honeyboat'>*/}
       {/*/!*<BrowserRouter basename='/React'>*!/*/}
         <Routes>
           <Route exact path='/' element={<Main />}/>

@@ -9,7 +9,6 @@ import Colaboration from "./Colaboration";
 import Products from "./Products";
 
 import imageBack from '../assets/tlo4.png';
-import {createRef} from "react";
 
 const Main = () => {
     // const about = createRef();

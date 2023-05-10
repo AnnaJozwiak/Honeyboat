@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import imageBack from "../assets/tlo4.png";
 import {CssBaseline} from "@mui/material";
-import imageTop from "../assets/wave4.svg";
 
 
 import AdminHeader from "./AdminHeader";

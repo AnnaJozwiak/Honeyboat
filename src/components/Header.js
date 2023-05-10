@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import theme from "../theme";
 import imageTop from "../assets/wave4.svg";
 import {NavLink} from "react-router-dom";
-import {HashLink} from "react-router-hash-link";
 import {Link} from 'react-scroll'
 
 const pages = [

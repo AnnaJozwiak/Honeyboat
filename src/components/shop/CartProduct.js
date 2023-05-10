@@ -1,7 +1,6 @@
 import {Button, Typography} from '@mui/material';
 import {CartContext} from "./CartContext";
-import {useContext,useEffect, useState} from "react";
-import supabase from "../../admin/SupabaseClient";
+import {useContext} from "react";
 import iconDelete from "../../assets/delete.svg";
 import iconMinus from "../../assets/minus-hexagon.svg";
 import iconPlus from "../../assets/add-hexagon.svg";

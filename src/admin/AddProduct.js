@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ThemeProvider,  Container, Box, Typography, Button, Link, CardContent, Card, Grid, TextField} from '@mui/material';
+import {ThemeProvider, Typography, Button, CardContent, Card, Grid, TextField} from '@mui/material';
 import theme from "../theme";
 
 import supabase from "./SupabaseClient";
@@ -13,8 +13,6 @@ const AddProduct = ({onCancel}) => {
     const [weight,setWeight] = useState('');
     const [img,setImgUrl] = useState('');
     const [formError, setFormError] =useState(null);
-
-    const navigate = useNavigate();
 
     //dodanie do bazy
     const handleSubmit = async () => {

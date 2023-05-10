@@ -1,5 +1,5 @@
 import React from 'react';
-import {ThemeProvider, Container, Box, Typography, Button, IconButton, Link} from '@mui/material';
+import {ThemeProvider, Container, Box, Typography, Button, IconButton} from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
