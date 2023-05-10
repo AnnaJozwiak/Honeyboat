@@ -213,7 +213,7 @@ const Header =() => {
                                     color: 'black',
                                     display: 'block' ,
                                     fontWeight: 700,
-                                    fontSize: '16px',
+                                    fontSize: { md: '14px', lg: '16px' },
                                     height:'100%'}}
                             >
                                 <Link to ='about' spy={true} smooth={true} style={{
@@ -232,7 +232,7 @@ const Header =() => {
                                     color: 'black',
                                     display: 'block' ,
                                     fontWeight: 700,
-                                    fontSize: '16px',
+                                    fontSize: { md: '14px', lg: '16px' },
                                     height:'100%'}}
                             >
 
@@ -253,7 +253,7 @@ const Header =() => {
                                     color: 'black',
                                     display: 'block' ,
                                     fontWeight: 700,
-                                    fontSize: '16px',
+                                    fontSize: { md: '14px', lg: '16px' },
                                     height:'100%'}}
                             >
                                 Sklep
@@ -265,7 +265,7 @@ const Header =() => {
                                     color: 'black',
                                     display: 'block' ,
                                     fontWeight: 700,
-                                    fontSize: '16px',
+                                    fontSize: { md: '14px', lg: '16px' },
                                     height:'100%'}}
                             >
                                 
@@ -286,7 +286,7 @@ const Header =() => {
                                     color: 'black',
                                     display: 'block' ,
                                     fontWeight: 700,
-                                    fontSize: '16px',
+                                    fontSize: { md: '14px', lg: '16px' },
                                     height:'100%'}}
                             >
                                 Zaloguj
