@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import imageBack from "../assets/tlo4.png";
 import {Button, Card, CardContent, CssBaseline, Grid, TextField, ThemeProvider, Typography} from "@mui/material";
 
 import theme from "../theme";
 
 import FakeAPI from './fakeAPI';
-import AdminPulpit from "./AdminPulpit";
 import {useNavigate} from "react-router-dom";
 
 const Login = () => {
