@@ -55,7 +55,7 @@ const About = () => {
                                  position: 'absolute',
                                  bottom: '187px',
                                  // right: { lg: '8px',xl:'76'},
-                                 right: '14px',
+                                 right: '25px',
                                  transform: 'rotate(118deg)'
                              }}/>
 
