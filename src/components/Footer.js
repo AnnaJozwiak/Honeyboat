@@ -189,7 +189,8 @@ const Footer =()=> {
                 }}>
                     <Typography sx={{
                         fontSize:13,
-                        paddingTop:'30px'
+                        paddingTop:'30px',
+                        paddingBottom: '20px'
                     }}>
                         Copyright © 2023 honeyboat.pl. All rights reserved.
                     </Typography>
