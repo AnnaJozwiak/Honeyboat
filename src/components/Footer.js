@@ -5,7 +5,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-
+import {Link as ScrollLink} from 'react-scroll'
 
 import theme from "../theme";
 import {NavLink} from "react-router-dom";
@@ -125,15 +125,24 @@ const Footer =()=> {
                             {/*))}*/}
                             <Button
                                 sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
-                                href='#about'
+                            
                             >
-                               O pasiece
+                                <ScrollLink to ='about' spy={true} smooth={true} style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
+                                    O pasiece
+                                    </ScrollLink>
                             </Button>
                             <Button
                                 sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
-                                href='#colaboration'
-                            >
-                                Współpraca
+                                >
+                                 <ScrollLink to ='colaboration' spy={true} smooth={true} style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
+                                     Współpraca
+                                    </ScrollLink>
                             </Button>
                             <Button
                                 sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
@@ -144,9 +153,14 @@ const Footer =()=> {
                             </Button>
                             <Button
                                 sx={{ textTransform: 'none', marginLeft:0, paddingLeft:0, textAlign:'left'}}
-                                href='#contact'
+                        
                             >
-                                Kontakt
+                                 <ScrollLink to ='contact' spy={true} smooth={true} style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
+                                     Kontakt
+                                    </ScrollLink>
                             </Button>
                         </Box>
 

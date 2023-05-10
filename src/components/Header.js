@@ -3,8 +3,9 @@ import {AppBar,Box,Toolbar,IconButton, Typography,Menu , Container,Button,MenuIt
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from "../theme";
 import imageTop from "../assets/wave4.svg";
-import {NavLink, Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
+import {Link} from 'react-scroll'
 
 const pages = [
     {
@@ -126,23 +127,27 @@ const Header =() => {
                                 {/*))}*/}
 
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <a href='/#about/'
-                                       style={{
+                        
+                                        <Link to ='about' spy={true} smooth={true} style={{
                                         textDecoration:'none',
                                         color: 'black'
-                                    }}><Typography textAlign="center"
+                                    }}>
+                                        <Typography textAlign="center"
                                        >
                                         O pasiece
-                                    </Typography></a>
+                                    </Typography>
+                                    </Link>
                                 </MenuItem>
 
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    <a href='/#colaboration/'
-                                       style={{
+    
+                                        <Link to ='colaboration' spy={true} smooth={true} style={{
                                         textDecoration:'none',
                                         color: 'black'
-                                    }}><Typography textAlign="center" sx={{
-                                    }}>Współpraca</Typography></a>
+                                    }}>
+                                        <Typography textAlign="center" sx={{
+                                    }}>Współpraca</Typography>
+                                    </Link>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
@@ -154,19 +159,17 @@ const Header =() => {
                                 </MenuItem>
 
                                 <MenuItem  onClick={handleCloseNavMenu}>
-                                    {/*<a href='/#contact/'*/}
-                                    {/*   style={{*/}
-                                    {/*    textDecoration:'none',*/}
-                                    {/*    color: 'black'*/}
-                                    {/*}}>*/}
-                                    <HashLink smooth to ='#contact'>
+                            
+                                    <Link to ='contact' spy={true} smooth={true} style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
                                     <Typography textAlign="center"
                                                 // component={Link}
                                                 // to={`#contact`}
                                                 sx={{
                                     }}> Kontakt</Typography>
-                                {/*</a>*/}
-                                </HashLink>
+                                </Link>
                                 </MenuItem>
 
                                 <MenuItem onClick={handleCloseNavMenu}>
@@ -204,9 +207,9 @@ const Header =() => {
                             {/*))}*/}
 
                             <Button
-                                // href='#about'
+                            
                                 onClick={handleCloseNavMenu}
-                                // onClick={handleScrollAbout}
+                            
                                 sx={{ mb: 5,
                                     color: 'black',
                                     display: 'block' ,
@@ -214,11 +217,17 @@ const Header =() => {
                                     fontSize: '16px',
                                     height:'100%'}}
                             >
-                                O pasiece
+                                <Link to ='about' spy={true} smooth={true} style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
+                                    O pasiece
+                                    </Link>
+                                
                             </Button>
 
                             <Button
-                                href='#colaboration'
+                            
                                 onClick={handleCloseNavMenu}
                                 sx={{ mb: 5,
                                     color: 'black',
@@ -227,7 +236,14 @@ const Header =() => {
                                     fontSize: '16px',
                                     height:'100%'}}
                             >
-                                Współpraca
+
+                                <Link to ='colaboration' spy={true} smooth={true} style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
+                                     Współpraca
+                                    </Link>
+                                                              
                             </Button>
 
                             <Button
@@ -245,7 +261,6 @@ const Header =() => {
                             </Button>
 
                             <Button
-                                href='/#contact/'
                                 onClick={handleCloseNavMenu}
                                 sx={{ mb: 5,
                                     color: 'black',
@@ -254,7 +269,14 @@ const Header =() => {
                                     fontSize: '16px',
                                     height:'100%'}}
                             >
-                                Kontakt
+                                
+                                <Link to ='contact' spy={true} smooth={true} style={{
+                                        textDecoration:'none',
+                                        color: 'black'
+                                    }}>
+                                     Kontakt
+                                    </Link>
+                               
                             </Button>
 
                             <Button
