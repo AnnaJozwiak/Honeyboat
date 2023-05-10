@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Honeyboat/static/css/main.8eb20739.css",
-    "main.js": "/Honeyboat/static/js/main.b5fadd9f.js",
+    "main.js": "/Honeyboat/static/js/main.3b98693b.js",
     "static/media/foto12.jpg": "/Honeyboat/static/media/foto12.963ad26eb4056aca6241.jpg",
     "static/media/foto4.jpg": "/Honeyboat/static/media/foto4.3a7319130dde84eda75e.jpg",
     "static/media/foto6.jpg": "/Honeyboat/static/media/foto6.b008a1e462cdadce13ee.jpg",
@@ -27,10 +27,10 @@
     "static/media/tornado-left.svg": "/Honeyboat/static/media/tornado-left.6d030b828b02694e6216e1690adb8881.svg",
     "static/media/blob2.svg": "/Honeyboat/static/media/blob2.aefc5469a437d14029eab5c974c66496.svg",
     "main.8eb20739.css.map": "/Honeyboat/static/css/main.8eb20739.css.map",
-    "main.b5fadd9f.js.map": "/Honeyboat/static/js/main.b5fadd9f.js.map"
+    "main.3b98693b.js.map": "/Honeyboat/static/js/main.3b98693b.js.map"
   },
   "entrypoints": [
     "static/css/main.8eb20739.css",
-    "static/js/main.b5fadd9f.js"
+    "static/js/main.3b98693b.js"
   ]
 }
