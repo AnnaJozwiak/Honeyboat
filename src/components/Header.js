@@ -77,7 +77,8 @@ const Header =() => {
                         <Box sx={{
                             flexGrow: 1,
                             display: { xs: 'flex', md: 'none' },
-                             justifyContent:'flex-end'}}>
+                             justifyContent:'flex-end',
+                        }}>
                             <IconButton
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"

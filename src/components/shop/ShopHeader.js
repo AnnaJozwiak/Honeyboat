@@ -7,6 +7,7 @@ import theme from "../../theme";
 
 import {CartContext} from "./CartContext";
 import CartProduct from "./CartProduct";
+import HomeIcon from '@mui/icons-material/Home';
 
 import iconHoney from "../../assets/honey-cart.svg";
 import imageTop from "../../assets/wave4.svg";
@@ -101,19 +102,21 @@ const ShopHeader =() => {
                                 }}/>
                                 ({productCount})
                             </IconButton>
+
                             <IconButton
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                onClick={handleOpenNavMenu}
+                                // aria-label="account of current user"
+                                // aria-controls="menu-appbar"
+                                // aria-haspopup="true"
+                                // onClick={handleOpenNavMenu}
                                 color="black"
+                                component={NavLink}
+                                to={'/'}>
+                                                            
+                                <HomeIcon 
                                 sx={{
+                                    fontSize: '30px',
                                     mr: 3,
                                     color: 'black'
-                                }}
-                            >
-                                <MenuIcon sx={{
-                                    fontSize: '30px'
                                 }}/>
                             </IconButton>
 
