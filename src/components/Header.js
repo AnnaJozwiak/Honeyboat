@@ -63,16 +63,17 @@ const Header =() => {
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
 
-                        <Typography
+                        <Box
                             sx={{
                                 mr: 3,
                                 display: 'flex',
                                 height: { xs: '100px',lg: '150px', xl: '170px'},
+                                width: { xs: '140px',lg: '210px', xl: '240px'},
                                 ml:{ xs: 5, md: 12, lg: 17,xl:15 },
                                 mt:{ xs: 2, xl:3 },
                             }}>
                             <img src={logo} alt='logo' />
-                        </Typography>
+                        </Box>
 
                         <Box sx={{
                             flexGrow: 1,
