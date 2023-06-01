@@ -76,6 +76,7 @@ const ShopHeader =() => {
                                 mr: 3,
                                 display: 'flex',
                                 height: { xs: '100px',lg: '150px', xl: '170px'},
+                                width: { xs: '140px',lg: '210px', xl: '240px'},
                                 ml:{ xs: 5, md: 12, lg: 17,xl:15 },
                                 mt:{ xs: 2, xl:3 },
                             }}
@@ -167,7 +168,7 @@ const ShopHeader =() => {
                                         color: 'black',
                                         display:  'block',
                                         fontWeight: 700,
-                                        fontSize: '16px',
+                                        fontSize: { md: '14px', lg: '16px' },
                                         height:'100%'}}
                                 >
                                     {page.name}
